@@ -3,7 +3,6 @@ import type { Slot } from "./slot";
 
 export interface Category {
     name: string;
-    asset: string;
     slot: Slot;
     options: Option[];
 }
