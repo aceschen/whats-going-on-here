@@ -1,0 +1,16 @@
+export const enum Slot {
+    EYES = "EYES",
+    MOUTH = "MOUTH",
+    HAIR = "HAIR",
+    TOP = "TOP",
+    OUTERWEAR = "OUTERWEAR",
+    DRESS = "DRESS",
+    PANTS = "PANTS",
+    SOCK = "SOCK",
+    SHOE = "SHOE",
+    UNDERGARMENTS = "UNDERGARMENTS", 
+    BASE_BODY = "BASE_BODY", 
+    BACKGROUND_ELEMENTS = "BACKGROUND_ELEMENTS", 
+    BACKGROUND = "BACKGROUND", 
+    ACCESSORY = "ACCESSORY",
+}
