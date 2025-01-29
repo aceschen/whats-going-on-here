@@ -1,28 +1,38 @@
 <script lang="ts">
-    import { shoeOption } from "../stores/selectedOptions";
+    import { Slot } from "../types/slot";
+    import CanvasElement from "./CanvasElement.svelte";
 
-    // Dynamically import assets
-    const images = import.meta.glob("/src/assets/*", { eager: true });
-
-    let imageUrl = "";
-
-    // Reactive statement to update imageUrl when $shoeOption changes
-    $: imageUrl = $shoeOption ? images[`/src/assets/${$shoeOption.asset}`]?.default || "" : "";
+    // List of all slots
+    const slots = [
+        Slot.BACKGROUND, 
+        Slot.BACKGROUND_ELEMENT, 
+        Slot.BASE_BODY,
+        Slot.HAIR, 
+        Slot.EYES, 
+        Slot.MOUTH, 
+        Slot.UNDERGARMENT, 
+        Slot.SOCK, 
+        Slot.SHOE, 
+        Slot.PANTS, 
+        Slot.TOP, 
+        Slot.DRESS,
+        Slot.OUTERWEAR, 
+        Slot.ACCESSORY
+    ];
 </script>
 
-<div 
-    class="canvas" 
-    style="background-image: url({imageUrl});"
->
+<div class="canvas">
+    {#each slots as slot, index}
+        <CanvasElement {slot} zIndex={index} />
+    {/each}
 </div>
 
 <style>
     .canvas {
         height: 600px;
         width: 600px;
-        background-color: royalblue;
-        background-size: contain; /* Adjust to fit */
-        background-position: center;
-        background-repeat: no-repeat;
+        background-color: blanchedalmond;
+        position: relative; /* Allows elements inside to overlap */
+        overflow: hidden;
     }
 </style>
