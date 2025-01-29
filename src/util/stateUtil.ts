@@ -5,6 +5,7 @@ import {
     pantsOption, sockOption, shoeOption, undergarmentsOption, baseBodyOption,
     backgroundElementsOption, backgroundOption, accessoriesOptions 
 } from "../stores/selectedOptions";
+import type { Writable } from "svelte/store";
 
 function setStateBySlot(option: Option | undefined, slot: Slot) {
     switch (slot) {
@@ -35,13 +36,13 @@ function setStateBySlot(option: Option | undefined, slot: Slot) {
         case Slot.SHOE:
             shoeOption.set(option);
             break;
-        case Slot.UNDERGARMENTS:
+        case Slot.UNDERGARMENT:
             undergarmentsOption.set(option);
             break;
         case Slot.BASE_BODY:
             baseBodyOption.set(option);
             break;
-        case Slot.BACKGROUND_ELEMENTS:
+        case Slot.BACKGROUND_ELEMENT:
             backgroundElementsOption.set(option);
             break;
         case Slot.BACKGROUND:
@@ -61,4 +62,39 @@ export function setOptionState(option: Option) {
 
 export function clearOptionState(slot: Slot) {
     setStateBySlot(undefined, slot);
+}
+
+export function getStoreBySlot(slot: Slot): Writable<Option | undefined> {
+    switch (slot) {
+        case Slot.EYES:
+            return eyesOption;
+        case Slot.MOUTH:
+            return mouthOption;
+        case Slot.HAIR:
+            return hairOption;
+        case Slot.TOP:
+            return topOption;
+        case Slot.OUTERWEAR:
+            return outerwearOption;
+        case Slot.DRESS:
+            return dressOption;
+        case Slot.PANTS:
+            return pantsOption;
+        case Slot.SOCK:
+            return sockOption;
+        case Slot.SHOE:
+            return shoeOption;
+        case Slot.UNDERGARMENT:
+            return undergarmentsOption;
+        case Slot.BASE_BODY:
+            return baseBodyOption;
+        case Slot.BACKGROUND_ELEMENT:
+            return backgroundElementsOption;
+        case Slot.ACCESSORY:
+            return accessoriesOptions;
+        case Slot.BACKGROUND:
+        default:
+            return backgroundOption;
+            // screw the unhandled case
+    }
 }
