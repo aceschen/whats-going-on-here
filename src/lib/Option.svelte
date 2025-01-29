@@ -1,13 +1,12 @@
 <script lang="ts">
     import { shoeOption } from "../stores/selectedOptions";
     import type { Option } from "../types/option";
+    import { resolveImage } from "../util/imgUtil";
     import { setOptionState } from "../util/stateUtil";
 
     export let option: Option;
 
-    // Dynamically import assets
-    const images = import.meta.glob("/src/assets/*", { eager: true });
-    const imageUrl = images[`/src/assets/${option.asset}`]?.default || "";
+    const imageUrl = resolveImage(option);
 
     function selectOption() {
         setOptionState(option);

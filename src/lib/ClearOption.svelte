@@ -7,7 +7,6 @@
 
     function clearOption() {
         clearOptionState(slot);
-        shoeOption.set(undefined); // Reset selected shoe option
     }
 </script>
 

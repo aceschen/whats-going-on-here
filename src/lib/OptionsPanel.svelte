@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { CATEGORIES } from "../data/category";
+    import { CATEGORIES } from "../data/categories";
     import type { Category } from "../types/category";
     import ClearOption from "./ClearOption.svelte";
     import Option from "./Option.svelte";
