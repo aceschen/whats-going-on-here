@@ -59,7 +59,7 @@ function setStateBySlot(option: Option | undefined, slot: Slot) {
       backgroundOption.set(option);
       break;
     case Slot.ACCESSORY:
-      accessoriesOptions.set(option); // Assuming accessoriesOptions holds multiple options
+      accessoriesOptions.set(option);
       break;
     default:
       console.warn(`Unhandled slot: ${slot}`);

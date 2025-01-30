@@ -2,7 +2,6 @@
   import { Slot } from "../types/slot";
   import CanvasElement from "./CanvasElement.svelte";
 
-  // List of all slots
   const slots = [
     Slot.BACKGROUND,
     Slot.BACKGROUND_ELEMENT,
@@ -32,7 +31,7 @@
     height: 600px;
     width: 600px;
     background-color: blanchedalmond;
-    position: relative; /* Allows elements inside to overlap */
+    position: relative;
     overflow: hidden;
   }
 </style>

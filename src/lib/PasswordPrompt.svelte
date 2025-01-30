@@ -2,11 +2,11 @@
   export let onAuthenticated: () => void;
 
   let password = "";
-  const correctPassword = "mypassword"; // Change this to your actual password
+  const correctPassword = "mypassword";
 
   function checkPassword() {
     if (password === correctPassword) {
-      localStorage.setItem("isAuthenticated", "true"); // Store authentication status
+      localStorage.setItem("isAuthenticated", "true");
       onAuthenticated();
     } else {
       alert("Incorrect password!");
