@@ -6,7 +6,6 @@ export const currentPuzzle = writable<Puzzle | undefined>(undefined);
 const STORAGE_KEY = "SOLVED_PUZZLE_SET";
 
 function loadSolvedPuzzlesSet(): Set<string> {
-    return new Set<string>();
     const storedValue = localStorage.getItem(STORAGE_KEY);
     return storedValue
         ? new Set<string>(JSON.parse(storedValue) as string[])
