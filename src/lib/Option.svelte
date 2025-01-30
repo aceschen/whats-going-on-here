@@ -1,25 +1,31 @@
 <script lang="ts">
-    import { shoeOption } from "../stores/selectedOptions";
+    import { setOptionState, shoeOption } from "../stores/optionsStore";
     import type { Option } from "../types/option";
     import { resolveImage } from "../util/imgUtil";
-    import { setOptionState } from "../util/stateUtil";
+    import { currentPuzzle, isPuzzleSolved } from "../stores/puzzleStore";
 
     export let option: Option;
-
     const imageUrl = resolveImage(option);
+    $: unlocked = $isPuzzleSolved(option.puzzle);
+
 
     function selectOption() {
-        setOptionState(option);
-        console.log("Set option ", $shoeOption)
+        if (unlocked) {
+            setOptionState(option);
+            console.log("Set option ", $shoeOption);
+        } else {
+            currentPuzzle.set(option.puzzle);
+            console.log($currentPuzzle);
+        }
     }
 </script>
 
-<button 
-    class="option-button" 
+<button
+    class="option-button {unlocked ? '' : 'locked'}"
     style="background-image: url({imageUrl});"
     on:click={selectOption}
 >
-lol
+  lol
 </button>
 
 <style>
@@ -27,9 +33,15 @@ lol
         height: 80px;
         width: 80px;
         background-color: aliceblue;
-        background-size: cover; /* Ensures the image covers the button */
+        background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        border-radius: 8px; /* Optional: Rounds the corners */
+        border-radius: 8px;
+        cursor: pointer;
+    }
+
+    .option-button.locked {
+        filter: grayscale(100%);
+        opacity: 0.5;
     }
 </style>

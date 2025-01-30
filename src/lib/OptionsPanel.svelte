@@ -9,7 +9,6 @@
 
 <div class="options-panel">
     {#if selectedCategory === null}
-        <!-- Show the list of categories -->
         <h2>Categories</h2>
         <ul class="category-list">
             {#each CATEGORIES as category}
@@ -21,7 +20,6 @@
             {/each}
         </ul>
     {:else}
-        <!-- Show items in the selected category -->
         <h2>{selectedCategory.name}</h2>
         <div class="options-container">
             <ClearOption slot={selectedCategory.slot}/>
@@ -54,14 +52,9 @@
 
     .options-container {
         display: flex;
-        flex-wrap: wrap; /* Allows items to wrap if there's not enough space */
+        flex-wrap: wrap; 
         gap: 1rem;
-        justify-content: flex-start; /* Align items to the left */
-    }
-
-    .options-container > * {
-        flex: 1 1 auto; /* Allows flexible growth while keeping items evenly distributed */
-        min-width: 80px; /* Prevents items from getting too small */
+        justify-content: flex-start; 
     }
 
     .back-btn {

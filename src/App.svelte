@@ -1,9 +1,9 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import PasswordPrompt from "./lib/PasswordPrompt.svelte";
-  import Counter from "./lib/Counter.svelte";
   import OptionsPanel from "./lib/OptionsPanel.svelte";
   import Canvas from "./lib/Canvas.svelte";
+    import PuzzleModal from "./lib/PuzzleModal.svelte";
 
   let isAuthenticated = false;
 
@@ -21,6 +21,7 @@
     <div class="container">
       <Canvas />
       <OptionsPanel />
+      <PuzzleModal />
     </div>
   </main>
 {:else}

@@ -1,7 +1,6 @@
 <script lang="ts">
-    import { shoeOption } from "../stores/selectedOptions";
+    import { clearOptionState, shoeOption } from "../stores/optionsStore";
     import { Slot } from "../types/slot";
-    import { clearOptionState } from "../util/stateUtil";
 
     export let slot: Slot;
 
