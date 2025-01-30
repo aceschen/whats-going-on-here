@@ -5,6 +5,5 @@ export interface Option {
     name: string;
     asset: string;
     slot: Slot;
-    isLocked: boolean;
     puzzle?: Puzzle;
 }
