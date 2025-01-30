@@ -1,32 +1,30 @@
 <script lang="ts">
-    import { getStoreBySlot } from "../stores/optionsStore";
-    import type { Slot } from "../types/slot";
-    import { resolveImage } from "../util/imgUtil";
+  import { getStoreBySlot } from "../stores/optionsStore";
+  import type { Slot } from "../types/slot";
+  import { resolveImage } from "../util/imgUtil";
 
-    export let slot: Slot;
-    export let zIndex: number;
+  export let slot: Slot;
+  export let zIndex: number;
 
-    const selectedStore = getStoreBySlot(slot);
+  const selectedStore = getStoreBySlot(slot);
 
-    $: imageUrl = resolveImage($selectedStore)
+  $: imageUrl = resolveImage($selectedStore);
 </script>
 
-<div 
-    class="canvas-element" 
-    style="background-image: url({imageUrl}); z-index: {zIndex};"
-
->
-</div>
+<div
+  class="canvas-element"
+  style="background-image: url({imageUrl}); z-index: {zIndex};"
+></div>
 
 <style>
-    .canvas-element {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-size: contain;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
+  .canvas-element {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
 </style>

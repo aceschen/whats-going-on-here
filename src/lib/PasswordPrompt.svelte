@@ -21,7 +21,7 @@
     type="password"
     bind:value={password}
     placeholder="Enter password"
-    on:keypress={(e) => e.key === 'Enter' && checkPassword()}
+    on:keypress={(e) => e.key === "Enter" && checkPassword()}
   />
   <button on:click={checkPassword}>Submit</button>
 </div>

@@ -1,9 +1,9 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import PasswordPrompt from "./lib/PasswordPrompt.svelte";
   import OptionsPanel from "./lib/OptionsPanel.svelte";
   import Canvas from "./lib/Canvas.svelte";
-    import PuzzleModal from "./lib/PuzzleModal.svelte";
+  import PuzzleModal from "./lib/PuzzleModal.svelte";
+  import PasswordPrompt from "./lib/PasswordPrompt.svelte";
 
   let isAuthenticated = false;
 
@@ -34,12 +34,10 @@
     margin-top: 2rem;
   }
 
-  /* Flex container for horizontal layout */
   .container {
     display: flex;
-    justify-content: space-between; /* Adjust spacing */
-    align-items: stretch; /* Align items vertically */
-    gap: 1rem; /* Adds space between the elements */
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 1rem;
   }
-
 </style>
