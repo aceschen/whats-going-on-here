@@ -6,4 +6,5 @@ export interface Option {
   asset: string;
   slot: Slot;
   puzzle?: Puzzle;
+  new?: boolean;
 }
