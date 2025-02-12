@@ -1,6 +1,9 @@
 import type { Option } from "../types/option";
 import type { Slot } from "../types/slot";
 
+// This whole file is a bad idea??
+// Whatever
+
 const imagesBySlot: Record<Slot, Record<string, any>> = {
   EYES: import.meta.glob("/src/assets/eyes/*", { eager: true }) as Record<
     string,
@@ -54,7 +57,7 @@ const imagesBySlot: Record<Slot, Record<string, any>> = {
   }) as Record<string, any>,
 };
 
-const iconImages: Record<string, any> = import.meta.glob("/src/assets/icon/*");
+const iconImages: Record<string, any> = import.meta.glob("/src/assets/icon/*", { eager: true });
 
 function resolveFromImages(
   images: Record<string, any>,
@@ -69,8 +72,13 @@ function resolveFromImages(
   return matchingKey ? images[matchingKey]?.default || images[matchingKey] : "";
 }
 
+// awful
 export function resolveIconImage(slot: Slot): string {
-  return resolveFromImages(iconImages, slot.toLowerCase());
+  return resolveFromImages(iconImages, `icon_${slot}.png`.toLowerCase());
+}
+
+export function resolveIconImageByName(icon: string): string {
+  return resolveFromImages(iconImages, icon);
 }
 
 export function resolveImage(option: Option | undefined): string {
