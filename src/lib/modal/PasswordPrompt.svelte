@@ -2,7 +2,7 @@
   export let onAuthenticated: () => void;
 
   let password = "";
-  const correctPassword = "mypassword";
+  const correctPassword = "password";
 
   function checkPassword() {
     if (password === correctPassword) {

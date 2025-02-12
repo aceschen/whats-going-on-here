@@ -1,6 +1,7 @@
 <script lang="ts">
-  import { currentPuzzle, markPuzzleSolved } from "../stores/puzzleStore";
+  import { currentPuzzle, isHintActivated, markHintActivated, markPuzzleSolved } from "../stores/puzzleStore";
 
+  // The showHint variable isn't strictly necessary here because we can use an inline check.
   let enteredPassword = "";
 
   function closeModal() {
@@ -10,13 +11,16 @@
 
   function checkPassword() {
     if (enteredPassword === $currentPuzzle?.password) {
-      // TODO: make nicer
       alert("Correct password");
       markPuzzleSolved($currentPuzzle!);
       closeModal();
     } else {
       alert("Wrong password");
     }
+  }
+
+  function onShowHintClick() {
+    markHintActivated($currentPuzzle!);
   }
 
   function onOverlayClick(event: MouseEvent) {
@@ -50,10 +54,24 @@
       <button
         class="close-button"
         on:click={closeModal}
-        aria-label="Close dialog">X</button
+        aria-label="Close dialog"
       >
+        X
+      </button>
 
       <h2>{$currentPuzzle.prompt}</h2>
+
+      {#if $currentPuzzle.hint}
+        {#if $isHintActivated($currentPuzzle)}
+          <!-- The hint is activated: show the hint text -->
+          <p class="hint">Hint: {$currentPuzzle.hint}</p>
+        {:else}
+          <!-- The hint exists but isn't activated: show a button to activate it -->
+          <button class="hint-button" on:click={onShowHintClick}>
+            Show Hint
+          </button>
+        {/if}
+      {/if}
 
       <input
         bind:value={enteredPassword}
@@ -76,7 +94,6 @@
     align-items: center;
     justify-content: center;
     z-index: 999;
-
     outline: none;
   }
 
@@ -98,6 +115,20 @@
     background: transparent;
     border: none;
     font-size: 1.25rem;
+    cursor: pointer;
+  }
+
+  .hint {
+    font-style: italic;
+    margin: 1rem 0;
+    color: #555;
+  }
+
+  .hint-button {
+    display: block;
+    margin: 1rem 0;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
     cursor: pointer;
   }
 </style>

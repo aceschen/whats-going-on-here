@@ -1,9 +1,9 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import OptionsPanel from "./lib/OptionsPanel.svelte";
-  import Canvas from "./lib/Canvas.svelte";
-  import PuzzleModal from "./lib/PuzzleModal.svelte";
-  import PasswordPrompt from "./lib/PasswordPrompt.svelte";
+  import OptionsPanel from "./lib/option/OptionsPanel.svelte";
+  import Canvas from "./lib/canvas/Canvas.svelte";
+  import PasswordPrompt from "./lib/modal/PasswordPrompt.svelte";
+  import CategoryPanel from "./lib/category/CategoryPanel.svelte";
 
   let isAuthenticated = false;
 
@@ -18,11 +18,11 @@
 
 {#if isAuthenticated}
   <main>
-    <div class="container">
+    <container>
       <Canvas />
       <OptionsPanel />
-      <PuzzleModal />
-    </div>
+    </container>
+    <CategoryPanel />
   </main>
 {:else}
   <PasswordPrompt onAuthenticated={handleAuthentication} />
@@ -30,14 +30,15 @@
 
 <style>
   main {
-    text-align: center;
-    margin-top: 2rem;
+    height: auto;
+    width: max(90vw);
   }
 
-  .container {
+  container {
     display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-    gap: 1rem;
+    flex-direction: row;
+    align-items: flex-end;
+
   }
+  
 </style>

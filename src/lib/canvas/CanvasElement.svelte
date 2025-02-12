@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { getStoreBySlot } from "../stores/optionsStore";
-  import type { Slot } from "../types/slot";
-  import { resolveImage } from "../util/imgUtil";
+  import { getStoreBySlot } from "../../stores/optionsStore";
+  import type { Slot } from "../../types/slot";
+  import { resolveImage } from "../../util/imgUtil";
 
   export let slot: Slot;
   export let zIndex: number;
