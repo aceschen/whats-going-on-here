@@ -28,6 +28,7 @@
     width: 40vw;
     aspect-ratio: 1;
     background-color: blanchedalmond;
+    border-radius: 4px;
     margin-right: 3.36vw;
     position: relative;
     overflow: hidden;

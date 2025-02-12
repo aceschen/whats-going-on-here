@@ -51,7 +51,13 @@
         )});"
         on:click={prevPage}
       />
+    {:else}
+      <div class="placeholder"/>
     {/if}
+
+    <div class="category-name">
+      {$selectedCategory.name}
+    </div>
 
     {#if currentPage < totalPages - 1}
       <div
@@ -61,6 +67,8 @@
         )});"
         on:click={nextPage}
       />
+      {:else}
+      <div class="placeholder"/>
     {/if}
   </div>
 
@@ -73,11 +81,14 @@
 
 <style>
   .options-panel {
-    height: 50vw;
-    width: 46.78vw;
+    width: 43.5vw;
     display: flex;
+    padding: 1.5vw;
     flex-direction: column;
     justify-content: flex-end;
+    background-color: #ffffff88;
+    border-radius: 0.5vw;
+    align-items: center;
   }
 
   .header {
@@ -85,24 +96,34 @@
     justify-content: space-between;
     align-items: center;
     padding: 0vw 1vw;
+    width: 95%;
+    margin-bottom: 1vw;
   }
 
   .options-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    gap: 3.18vw;
-    width: 100%;
+    row-gap: 0.7vw;
+    column-gap: 1.1vw;
   }
 
   .navbutton {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    width: 5vw;
-    height: 5vw;
+    width: 2vw;
+    height: 2vw;
     background-color: transparent;
     border: none;
     cursor: pointer;
+  }
+  .placeholder {
+    width: 2vw;
+    height: 2vw;
+  }
+  .category-name {
+    font-size: 3vw;
+    color: var(--red-accent);
   }
 </style>

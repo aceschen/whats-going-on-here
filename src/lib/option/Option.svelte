@@ -40,13 +40,13 @@
 
 <style>
   .option-button {
-    width: 100%;
+    width: 10vw;
     aspect-ratio: 1;
     background-color: aliceblue;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    border-radius: 1vw;
+    border-radius: 0.5vw;
     cursor: pointer;
     position: relative;
     overflow: visible;
@@ -61,7 +61,7 @@
     right: -0.35vw;
     bottom: -0.35vw;
     border: 0.5vw solid transparent;
-    border-radius: 1.5vw;
+    border-radius: 0.5vw;
     transition: border-color 0.3s ease;
     pointer-events: none; /* Ensure it doesn’t interfere with clicks */
   }

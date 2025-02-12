@@ -13,53 +13,53 @@ import { ACCESSORY_OPTIONS } from "./accessory";
 
 export const CATEGORIES: Category[] = [
   {
-    name: "Faces",
+    name: "faces",
     slot: Slot.FACE,
     options: FACE_OPTIONS,
   },
   {
-    name: "Shoes",
-    slot: Slot.SHOE,
-    options: SHOE_OPTIONS,
-  },
-  {
-    name: "Tops",
-    slot: Slot.TOP,
-    options: TOP_OPTIONS,
-  },
-  {
-    name: "Socks",
-    slot: Slot.SOCK,
-    options: SOCK_OPTIONS,
-  },
-  {
-    name: "Outerwear",
-    slot: Slot.OUTERWEAR,
-    options: OUTERWEAR_OPTIONS,
-  },
-  {
-    name: "Hair",
+    name: "hair",
     slot: Slot.HAIR,
     options: HAIR_OPTIONS,
   },
   {
-    name: "Dresses",
+    name: "tops",
+    slot: Slot.TOP,
+    options: TOP_OPTIONS,
+  },
+  {
+    name: "outerwear",
+    slot: Slot.OUTERWEAR,
+    options: OUTERWEAR_OPTIONS,
+  },
+  {
+    name: "dresses",
     slot: Slot.DRESS,
     options: DRESS_OPTIONS,
   },
   {
-    name: "Bottoms",
+    name: "bottoms",
     slot: Slot.BOTTOM,
     options: BOTTOM_OPTIONS,
   },
   {
-    name: "Backgrounds",
-    slot: Slot.BACKGROUND,
-    options: BACKGROUND_OPTIONS,
+    name: "socks",
+    slot: Slot.SOCK,
+    options: SOCK_OPTIONS,
   },
   {
-    name: "Accessories",
+    name: "shoes",
+    slot: Slot.SHOE,
+    options: SHOE_OPTIONS,
+  },
+  {
+    name: "accessories",
     slot: Slot.ACCESSORY,
     options: ACCESSORY_OPTIONS,
+  },
+  {
+    name: "backgrounds",
+    slot: Slot.BACKGROUND,
+    options: BACKGROUND_OPTIONS,
   },
 ];
