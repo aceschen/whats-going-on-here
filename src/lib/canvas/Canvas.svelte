@@ -18,6 +18,16 @@
 <div class="canvas">
   <CanvasElement slot={Slot.BACKGROUND} zIndex={0} />
 
+  <!--these should be the default assets: 
+      base
+      hair / long_black
+      face / default
+      top / old_coolsclub
+      bottom / old_tinyshort
+      background / old_offwhite
+      nothing else (no socks/accessory/etc)
+  -->
+
   {#each slots as slot, index}
     <CanvasElement {slot} zIndex={index + 2} />
   {/each}

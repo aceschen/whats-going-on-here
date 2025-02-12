@@ -59,7 +59,7 @@ export const TOP_OPTIONS: Option[] = [
     puzzle: {
       id: "alwaysbesideyouPuzzle",
       prompt: "so recently i thought i saw / three buddies, like in bonbonbon",
-      password: "home",
+      password: "auckland",
     },
   },
   {
@@ -67,9 +67,9 @@ export const TOP_OPTIONS: Option[] = [
     asset: "clue_blackwhitetank.png",
     slot: Slot.TOP,
     puzzle: {
-      id: "topsPuzzle1",
-      prompt: "Test prompt",
-      password: "password",
+      id: "blackwhitetankPuzzle",
+      prompt: "when autumn comes i'm not yet done / november joy, ar-chives of fun",
+      password: "snuggle",
     },
   },
   {
@@ -77,9 +77,9 @@ export const TOP_OPTIONS: Option[] = [
     asset: "clue_denimtank.png",
     slot: Slot.TOP,
     puzzle: {
-      id: "topsPuzzle1",
-      prompt: "Test prompt",
-      password: "password",
+      id: "denimtankPuzzle",
+      prompt: "ann arbor's an expensive flight / at least it's cheaper on my site",
+      password: "seattle",
     },
   },
   {
@@ -87,9 +87,9 @@ export const TOP_OPTIONS: Option[] = [
     asset: "clue_myhoodie.png",
     slot: Slot.TOP,
     puzzle: {
-      id: "topsPuzzle1",
-      prompt: "Test prompt",
-      password: "password",
+      id: "myhoodiePuzzle",
+      prompt: "my hand in yours the whole night long / we'll dance together to these songs",
+      password: "waltz",
     },
   },
   {
@@ -97,9 +97,9 @@ export const TOP_OPTIONS: Option[] = [
     asset: "clue_poppy.png",
     slot: Slot.TOP,
     puzzle: {
-      id: "topsPuzzle1",
-      prompt: "Test prompt",
-      password: "password",
+      id: "poppyPuzzle",
+      prompt: "for chazuke, the o's polite / i guess tday is nice alright",
+      password: "nabe",
     },
   },
   {
