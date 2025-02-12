@@ -23,6 +23,7 @@
       <Canvas />
       <OptionsPanel />
     </container>
+    <PuzzleModal />
     <CategoryPanel />
   </main>
 {:else}
