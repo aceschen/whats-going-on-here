@@ -81,11 +81,11 @@
 
 <style>
   .options-panel {
-    width: 43.5vw;
+    width: 46vw;
+    height: 40vw;
     display: flex;
-    padding: 1.5vw;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: space-between;
     background-color: #ffffff88;
     border-radius: 0.5vw;
     align-items: center;
@@ -96,16 +96,17 @@
     justify-content: space-between;
     align-items: center;
     padding: 0vw 1vw;
-    width: 95%;
-    margin-bottom: 1vw;
+    width: 40.5vw;
+    margin-top: 0.7vw;
   }
 
   .options-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    row-gap: 0.7vw;
-    column-gap: 1.1vw;
+    gap: 1vw;
+    width: 43vw;
+    margin-bottom: 1.5vw;
   }
 
   .navbutton {
@@ -114,6 +115,7 @@
     background-position: center;
     width: 2vw;
     height: 2vw;
+    margin-top: 0.5vw;
     background-color: transparent;
     border: none;
     cursor: pointer;

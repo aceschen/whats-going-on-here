@@ -4,6 +4,7 @@
   import Canvas from "./lib/canvas/Canvas.svelte";
   import PasswordPrompt from "./lib/modal/PasswordPrompt.svelte";
   import CategoryPanel from "./lib/category/CategoryPanel.svelte";
+  import PuzzleModal from "./lib/modal/PuzzleModal.svelte";
 
   let isAuthenticated = false;
 
@@ -37,6 +38,6 @@
   container {
     display: flex;
     flex-direction: row;
-    align-items: flex-end;
+    justify-content: space-between;
   }
 </style>

@@ -40,7 +40,7 @@
 
 <style>
   .option-button {
-    width: 10vw;
+    width: 100%;
     aspect-ratio: 1;
     background-color: aliceblue;
     background-size: cover;
