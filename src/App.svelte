@@ -38,7 +38,5 @@
     display: flex;
     flex-direction: row;
     align-items: flex-end;
-
   }
-  
 </style>

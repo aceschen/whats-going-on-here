@@ -21,7 +21,7 @@
   $: totalPages = Math.ceil(totalItems / itemsPerPage);
   $: displayedItems = sortedItems.slice(
     currentPage * itemsPerPage,
-    currentPage * itemsPerPage + itemsPerPage
+    currentPage * itemsPerPage + itemsPerPage,
   );
 
   $: if (currentPage >= totalPages) {
@@ -46,7 +46,9 @@
     {#if currentPage > 0}
       <div
         class="navbutton"
-        style="background-image: url({resolveIconImageByName('icon_nav_left.png')});"
+        style="background-image: url({resolveIconImageByName(
+          'icon_nav_left.png',
+        )});"
         on:click={prevPage}
       />
     {/if}
@@ -54,7 +56,9 @@
     {#if currentPage < totalPages - 1}
       <div
         class="navbutton"
-        style="background-image: url({resolveIconImageByName('icon_nav_right.png')});"
+        style="background-image: url({resolveIconImageByName(
+          'icon_nav_right.png',
+        )});"
         on:click={nextPage}
       />
     {/if}
@@ -74,7 +78,6 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-
   }
 
   .header {
@@ -102,5 +105,4 @@
     border: none;
     cursor: pointer;
   }
-
 </style>

@@ -6,8 +6,8 @@
 <div
   class="category-base"
   style="background-image: url({imageUrl});"
-  on:click={onClick}>
-</div>
+  on:click={onClick}
+></div>
 
 <style>
   .category-base {

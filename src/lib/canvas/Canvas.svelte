@@ -25,13 +25,12 @@
 
 <style>
   .canvas {
-  width: 40vw;
-  aspect-ratio: 1;
-  background-color: blanchedalmond;
-  margin-right: 3.36vw;
-  position: relative;
-  overflow: hidden;
-  box-sizing: border-box; /* Ensures width includes padding and borders */
-}
-
+    width: 40vw;
+    aspect-ratio: 1;
+    background-color: blanchedalmond;
+    margin-right: 3.36vw;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box; /* Ensures width includes padding and borders */
+  }
 </style>

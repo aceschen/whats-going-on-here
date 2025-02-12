@@ -1,11 +1,15 @@
 <script lang="ts">
-  import { clearOptionState, getStoreBySlot, setOptionState } from "../../stores/optionsStore";
+  import {
+    clearOptionState,
+    getStoreBySlot,
+    setOptionState,
+  } from "../../stores/optionsStore";
   import type { Option } from "../../types/option";
   import { resolveImage } from "../../util/imgUtil";
   import { currentPuzzle, isPuzzleSolved } from "../../stores/puzzleStore";
 
   export let option: Option;
-  
+
   $: imageUrl = resolveImage(option);
   $: unlocked = $isPuzzleSolved(option.puzzle);
 
@@ -25,8 +29,11 @@
     }
   }
 </script>
+
 <div
-  class="option-button {unlocked ? '' : 'locked'} {isSelected ? 'selected' : ''}"
+  class="option-button {unlocked ? '' : 'locked'} {isSelected
+    ? 'selected'
+    : ''}"
   style="background-image: url({imageUrl});"
   on:click={selectOption}
 />
@@ -47,7 +54,7 @@
   }
 
   .option-button::after {
-    content: '';
+    content: "";
     position: absolute;
     top: -0.35vw;
     left: -0.35vw;
@@ -60,7 +67,6 @@
   }
 
   .option-button.selected::after {
-    border-color: var(--red-accent)
+    border-color: var(--red-accent);
   }
-
 </style>

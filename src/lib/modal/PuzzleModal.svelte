@@ -1,5 +1,10 @@
 <script lang="ts">
-  import { currentPuzzle, isHintActivated, markHintActivated, markPuzzleSolved } from "../../stores/puzzleStore";
+  import {
+    currentPuzzle,
+    isHintActivated,
+    markHintActivated,
+    markPuzzleSolved,
+  } from "../../stores/puzzleStore";
 
   // The showHint variable isn't strictly necessary here because we can use an inline check.
   let enteredPassword = "";

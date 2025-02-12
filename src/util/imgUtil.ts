@@ -17,10 +17,9 @@ const imagesBySlot: Record<Slot, Record<string, any>> = {
     string,
     any
   >,
-  OUTERWEAR: import.meta.glob("/src/assets/outerwear/*", { eager: true }) as Record<
-    string,
-    any
-  >,
+  OUTERWEAR: import.meta.glob("/src/assets/outerwear/*", {
+    eager: true,
+  }) as Record<string, any>,
   HAIR: import.meta.glob("/src/assets/hair/*", { eager: true }) as Record<
     string,
     any
@@ -37,17 +36,17 @@ const imagesBySlot: Record<Slot, Record<string, any>> = {
     string,
     any
   >,
-  BACKGROUND: import.meta.glob("/src/assets/background/*", { eager: true }) as Record<
-    string,
-    any
-  >,
-  ACCESSORY: import.meta.glob("/src/assets/accessory/*", { eager: true }) as Record<
-    string,
-    any
-  >,
+  BACKGROUND: import.meta.glob("/src/assets/background/*", {
+    eager: true,
+  }) as Record<string, any>,
+  ACCESSORY: import.meta.glob("/src/assets/accessory/*", {
+    eager: true,
+  }) as Record<string, any>,
 };
 
-const iconImages: Record<string, any> = import.meta.glob("/src/assets/icon/*", { eager: true });
+const iconImages: Record<string, any> = import.meta.glob("/src/assets/icon/*", {
+  eager: true,
+});
 
 function resolveFromImages(
   images: Record<string, any>,
