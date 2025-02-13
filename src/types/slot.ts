@@ -11,4 +11,8 @@ export const enum Slot {
   ACCESSORY = "ACCESSORY",
 }
 
-export const NON_REMOVABLE_SLOTS: Set<Slot> = new Set([Slot.BACKGROUND, Slot.FACE, Slot.HAIR])
+export const NON_REMOVABLE_SLOTS: Set<Slot> = new Set([
+  Slot.BACKGROUND,
+  Slot.FACE,
+  Slot.HAIR,
+]);

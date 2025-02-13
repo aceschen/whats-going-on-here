@@ -1,8 +1,6 @@
 <script lang="ts">
   import { selectedCategory } from "../../stores/optionsStore";
-  import type { Category } from "../../types/category";
   import Option from "./Option.svelte";
-  import { isPuzzleSolved } from "../../stores/puzzleStore";
   import { resolveIconImageByName } from "../../util/imgUtil";
 
   let currentPage = 0;
@@ -10,16 +8,9 @@
 
   $: allItems = $selectedCategory ? $selectedCategory.options : [];
 
-  $: sortedItems = allItems.slice().sort((a, b) => {
-    const aUnlocked = $isPuzzleSolved(a.puzzle);
-    const bUnlocked = $isPuzzleSolved(b.puzzle);
-    if (aUnlocked === bUnlocked) return 0;
-    return aUnlocked ? -1 : 1;
-  });
-
-  $: totalItems = sortedItems.length;
+  $: totalItems = allItems.length;
   $: totalPages = Math.ceil(totalItems / itemsPerPage);
-  $: displayedItems = sortedItems.slice(
+  $: displayedItems = allItems.slice(
     currentPage * itemsPerPage,
     currentPage * itemsPerPage + itemsPerPage,
   );
@@ -52,7 +43,7 @@
         on:click={prevPage}
       />
     {:else}
-      <div class="placeholder"/>
+      <div class="placeholder" />
     {/if}
 
     <div class="category-name">
@@ -67,8 +58,8 @@
         )});"
         on:click={nextPage}
       />
-      {:else}
-      <div class="placeholder"/>
+    {:else}
+      <div class="placeholder" />
     {/if}
   </div>
 

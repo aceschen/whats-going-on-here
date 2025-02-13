@@ -6,7 +6,11 @@
   } from "../../stores/optionsStore";
   import type { Option } from "../../types/option";
   import { resolveImage } from "../../util/imgUtil";
-  import { currentPuzzle, isPuzzleSolved } from "../../stores/puzzleStore";
+  import {
+    currentAssociatedOption,
+    currentPuzzle,
+    isPuzzleSolved,
+  } from "../../stores/puzzleStore";
   import { NON_REMOVABLE_SLOTS } from "../../types/slot";
 
   export let option: Option;
@@ -21,6 +25,7 @@
   function selectOption() {
     if (!isUnlocked) {
       currentPuzzle.set(option.puzzle);
+      currentAssociatedOption.set(option);
       return;
     }
 

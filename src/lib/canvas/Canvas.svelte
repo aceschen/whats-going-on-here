@@ -16,9 +16,10 @@
   ];
 
   // Lol
-  const images: Record<string, any> = import.meta.glob("/src/assets/base.png", { eager: true });
+  const images: Record<string, any> = import.meta.glob("/src/assets/base.png", {
+    eager: true,
+  });
   const baseImage = images["/src/assets/base.png"].default;
-
 </script>
 
 <div class="canvas">

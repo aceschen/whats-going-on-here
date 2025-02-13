@@ -6,11 +6,10 @@
 
   export let category: Category;
   $: imageUrl = resolveIconImage(category.slot);
-  $: isSelected = $selectedCategory?.slot == category.slot
+  $: isSelected = $selectedCategory?.slot == category.slot;
 
   function selectCategory() {
     selectedCategory.set(category);
-    console.log(isSelected)
   }
 </script>
 

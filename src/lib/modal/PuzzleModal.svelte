@@ -1,7 +1,7 @@
 <script lang="ts">
   import { getStoreBySlot } from "../../stores/optionsStore";
   import {
-  currentAssociatedOption,
+    currentAssociatedOption,
     currentPuzzle,
     isHintActivated,
     isLocationActivated,
@@ -88,7 +88,9 @@
 
       {#if $currentPuzzle.location}
         {#if $isLocationActivated($currentPuzzle)}
-          <a href="{$currentPuzzle.location.locationUrl}">{$currentPuzzle.location.locationText}</a>
+          <a href={$currentPuzzle.location.locationUrl}
+            >{$currentPuzzle.location.locationText}</a
+          >
         {:else}
           <button class="hint-button" on:click={onShowLocationClick}>
             click to reveal clue location

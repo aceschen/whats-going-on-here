@@ -1,4 +1,3 @@
-
 <script lang="ts">
   import { getStoreBySlot } from "../../stores/optionsStore";
   import type { Slot } from "../../types/slot";
