@@ -133,6 +133,5 @@ export const areAllPuzzlesSolved = derived(solvedPuzzles, ($solvedPuzzles) => {
   // In case we have some crazy bug.... allow having extra puzzles count as winning
   console.log("Solved Puzzles Count: ", $solvedPuzzles.size);
   console.log("Total Puzzles Count: ", UNIQUE_PUZZLE_COUNT);
-  return $solvedPuzzles.size >= 3;
-  //return $solvedPuzzles.size >= ALL_PUZZLES.size;
+  return $solvedPuzzles.size >= ALL_PUZZLES.size;
 });
