@@ -5,7 +5,7 @@
     setOptionState,
   } from "../../stores/optionsStore";
   import type { Option } from "../../types/option";
-  import { resolveImage } from "../../util/imgUtil";
+  import { resolveIconImageByName, resolveImage } from "../../util/imgUtil";
   import {
     currentAssociatedOption,
     currentPuzzle,
@@ -15,12 +15,13 @@
 
   export let option: Option;
 
-  $: imageUrl = resolveImage(option);
+  $: optionImageUrl = resolveImage(option);
+  $: lockedImageUrl = resolveIconImageByName('icon_heart.png');
   $: isUnlocked = $isPuzzleSolved(option.puzzle);
 
   // roflcopter
   $: selectedOption = getStoreBySlot(option.slot);
-  $: isSelected = $selectedOption?.name == option.name;
+  $: isSelected = $selectedOption?.name === option.name;
 
   function selectOption() {
     if (!isUnlocked) {
@@ -40,10 +41,8 @@
 </script>
 
 <div
-  class="option-button {isUnlocked ? '' : 'locked'} {isSelected
-    ? 'selected'
-    : ''}"
-  style="background-image: url({imageUrl});"
+  class="option-button {isUnlocked ? '' : 'locked'} {isSelected ? 'selected' : ''}"
+  style="background-image: url({isUnlocked ? optionImageUrl : lockedImageUrl});"
   on:click={selectOption}
 />
 
@@ -52,13 +51,17 @@
     width: 100%;
     aspect-ratio: 1;
     background-color: aliceblue;
-    background-size: cover;
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     border-radius: 0.5vw;
     cursor: pointer;
     position: relative;
     overflow: visible;
+  }
+
+  .option-button.locked {
+    background-size: 55%;
   }
 
   .option-button::after {
