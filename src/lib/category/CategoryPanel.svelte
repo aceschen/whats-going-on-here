@@ -11,7 +11,11 @@
 </script>
 
 <div class="category-panel">
-  <CategoryBase imageUrl={resolveIconImageByName('icon_home.png')} onClick={selectHome} />
+  <CategoryBase 
+    imageUrl={resolveIconImageByName('icon_home.png')} 
+    isSelected={!$selectedCategory}
+    onClick={selectHome} 
+    />
   {#each CATEGORIES as category (category.slot)}
     <Category {category} />
   {/each}

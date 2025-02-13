@@ -54,7 +54,6 @@
     cursor: pointer;
     position: relative;
     overflow: visible;
-    transition: all 0s ease;
   }
 
   .option-button::after {
@@ -66,8 +65,7 @@
     bottom: -0.35vw;
     border: 0.5vw solid transparent;
     border-radius: 0.5vw;
-    transition: border-color 0.3s ease;
-    pointer-events: none; /* Ensure it doesn’t interfere with clicks */
+    pointer-events: none;
   }
 
   .option-button.selected::after {
