@@ -1,12 +1,15 @@
 <script lang="ts">
+  import { getStoreBySlot } from "../../stores/optionsStore";
   import {
+  currentAssociatedOption,
     currentPuzzle,
     isHintActivated,
+    isLocationActivated,
     markHintActivated,
+    markLocationActivated,
     markPuzzleSolved,
   } from "../../stores/puzzleStore";
 
-  // The showHint variable isn't strictly necessary here because we can use an inline check.
   let enteredPassword = "";
 
   function closeModal() {
@@ -18,6 +21,9 @@
     if (enteredPassword === $currentPuzzle?.password) {
       alert("Correct password");
       markPuzzleSolved($currentPuzzle!);
+      const option = $currentAssociatedOption!;
+      const store = getStoreBySlot(option.slot);
+      store.set(option);
       closeModal();
     } else {
       alert("Wrong password");
@@ -26,6 +32,10 @@
 
   function onShowHintClick() {
     markHintActivated($currentPuzzle!);
+  }
+
+  function onShowLocationClick() {
+    markLocationActivated($currentPuzzle!);
   }
 
   function onOverlayClick(event: MouseEvent) {
@@ -68,12 +78,20 @@
 
       {#if $currentPuzzle.hint}
         {#if $isHintActivated($currentPuzzle)}
-          <!-- The hint is activated: show the hint text -->
-          <p class="hint">Hint: {$currentPuzzle.hint}</p>
+          <p class="hint">{$currentPuzzle.hint}</p>
         {:else}
-          <!-- The hint exists but isn't activated: show a button to activate it -->
           <button class="hint-button" on:click={onShowHintClick}>
-            Show Hint
+            click to reveal clue hint
+          </button>
+        {/if}
+      {/if}
+
+      {#if $currentPuzzle.location}
+        {#if $isLocationActivated($currentPuzzle)}
+          <a href="{$currentPuzzle.location.locationUrl}">{$currentPuzzle.location.locationText}</a>
+        {:else}
+          <button class="hint-button" on:click={onShowLocationClick}>
+            click to reveal clue location
           </button>
         {/if}
       {/if}

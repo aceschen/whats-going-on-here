@@ -1,7 +1,10 @@
 import { derived, writable } from "svelte/store";
 import type { Puzzle } from "../types/puzzle";
+import type { Option } from "../types/option";
 
 export const currentPuzzle = writable<Puzzle | undefined>(undefined);
+// Hack, since Puzzle has no knowledge of its parent
+export const currentAssociatedOption = writable<Option | undefined>(undefined);
 
 const SOLVED_PUZZLES_STORAGE_KEY = "SOLVED_PUZZLE_SET";
 const ACTIVATED_HINTS_STORAGE_KEY = "ACTIVATED_HINT_SET";
