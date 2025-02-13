@@ -5,6 +5,7 @@ export const currentPuzzle = writable<Puzzle | undefined>(undefined);
 
 const SOLVED_PUZZLES_STORAGE_KEY = "SOLVED_PUZZLE_SET";
 const ACTIVATED_HINTS_STORAGE_KEY = "ACTIVATED_HINT_SET";
+const ACTIVATED_LOCATIONS_STORAGE_KEY = "ACTIVATED_LOCATION_SET";
 
 function loadSet(storageKey: string): Set<string> {
   const storedValue = localStorage.getItem(storageKey);
@@ -34,6 +35,11 @@ export const activatedHints = createPersistentSetStore(
   loadSet(ACTIVATED_HINTS_STORAGE_KEY),
 );
 
+export const activatedLocations = createPersistentSetStore(
+  ACTIVATED_LOCATIONS_STORAGE_KEY,
+  loadSet(ACTIVATED_LOCATIONS_STORAGE_KEY),
+);
+
 export function markPuzzleSolved(puzzle: Puzzle) {
   solvedPuzzles.update((set) => {
     set.add(puzzle.id);
@@ -43,6 +49,13 @@ export function markPuzzleSolved(puzzle: Puzzle) {
 
 export function markHintActivated(puzzle: Puzzle) {
   activatedHints.update((set) => {
+    set.add(puzzle.id);
+    return set;
+  });
+}
+
+export function markLocationActivated(puzzle: Puzzle) {
+  activatedLocations.update((set) => {
     set.add(puzzle.id);
     return set;
   });
@@ -59,5 +72,12 @@ export const isHintActivated = derived(activatedHints, ($activatedHints) => {
   return (puzzle: Puzzle | undefined): boolean => {
     if (!puzzle) return false;
     return $activatedHints.has(puzzle.id);
+  };
+});
+
+export const isLocationActivated = derived(activatedLocations, ($activatedLocations) => {
+  return (puzzle: Puzzle | undefined): boolean => {
+    if (!puzzle) return false;
+    return $activatedLocations.has(puzzle.id);
   };
 });

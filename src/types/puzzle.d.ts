@@ -3,4 +3,5 @@ export interface Puzzle {
   prompt: string;
   password: string;
   hint?: string;
+  location?: Location;
 }
