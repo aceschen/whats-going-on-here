@@ -72,13 +72,13 @@
 
 <style>
   .options-panel {
-    width: 46vw;
-    height: 40vw;
+    width: 50%;
+    height: 96%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     background-color: #ffffff88;
-    border-radius: 0.5vw;
+    border-radius: 2%;
     align-items: center;
   }
 
@@ -86,37 +86,39 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0vw 1vw;
-    width: 40.5vw;
-    margin-top: 0.7vw;
+    padding: 0% 1%;
+    width: 89%;
+    margin-top: 2.8%;
   }
 
   .options-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    gap: 1vw;
-    width: 43vw;
-    margin-bottom: 1.5vw;
+    width: 90%;
+    column-gap: 3%;
+    row-gap: 4%;
+    aspect-ratio: 4 / 3;
+    margin-bottom: 4.5%;
   }
 
   .navbutton {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    width: 2vw;
-    height: 2vw;
-    margin-top: 0.5vw;
+    width: 5%;
+    aspect-ratio: 1;
+    margin-top: 2.4%;
     background-color: transparent;
     border: none;
     cursor: pointer;
   }
   .placeholder {
-    width: 2vw;
-    height: 2vw;
+    width: 5%;
+    aspect-ratio: 1;
   }
   .category-name {
-    font-size: 3vw;
+    font-size: min(3vw, 5vh);
     color: var(--red-accent);
   }
 </style>

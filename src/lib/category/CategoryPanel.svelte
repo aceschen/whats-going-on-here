@@ -23,9 +23,10 @@
 
 <style>
   .category-panel {
+    height: 12%;
+    width: 100%;
     display: flex;
-    gap: 1.9vw;
-    justify-content: flex-start;
-    padding-top: 4vw;
+    margin-top: 2.4%;
+    justify-content: space-between;
   }
 </style>

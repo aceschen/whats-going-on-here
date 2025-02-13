@@ -38,11 +38,17 @@
 
 <style>
   main {
-    height: auto;
-    width: max(90vw);
+    aspect-ratio: 1.5;
+    width: min(90vw, calc(100vh * 1.5));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 
   container {
+    height: 70%;
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;

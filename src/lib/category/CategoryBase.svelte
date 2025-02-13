@@ -12,7 +12,7 @@
 
 <style>
   .category-base {
-    width: 6.9vw;
+    width: 8%;
     aspect-ratio: 1;
     background-size: contain;
     background-position: center;
@@ -22,18 +22,18 @@
     justify-content: center;
     cursor: pointer;
     position: relative;
-    border-radius: 0.5vw;
+    border-radius: 5%;
   }
 
   .category-base::after {
     content: "";
     position: absolute;
-    top: -0.35vw;
-    left: -0.35vw;
-    right: -0.35vw;
-    bottom: -0.35vw;
-    border: 0.5vw solid transparent;
-    border-radius: 0.5vw;
+    top: -0.35%;
+    left: -0.35%;
+    right: -0.35%;
+    bottom: -0.35%;
+    border: min(0.5vw, 1vh) solid transparent;
+    border-radius: 10%;
     pointer-events: none;
   }
 

@@ -41,13 +41,12 @@
 
 <style>
   .canvas {
-    width: 40vw;
+    height: 96%;
     aspect-ratio: 1;
     background-color: blanchedalmond;
-    border-radius: 4px;
-    margin-right: 3.36vw;
+    border-radius: 2%;
     position: relative;
     overflow: hidden;
-    box-sizing: border-box; /* Ensures width includes padding and borders */
+    box-sizing: border-box;
   }
 </style>

@@ -81,20 +81,20 @@ export function getImageStyle(slot: Slot): { backgroundSize: string; backgroundP
   switch (slot) {
     case Slot.HAIR:
     case Slot.FACE:
-      return { backgroundSize: '250%', backgroundPositionY: '-1vw' };
+      return { backgroundSize: '250%', backgroundPositionY: '4%' };
     case Slot.OUTERWEAR:
     case Slot.TOP:
-      return { backgroundSize: '150%', backgroundPositionY: '-2vw' };
+      return { backgroundSize: '150%', backgroundPositionY: '40%' };
     case Slot.SHOE:
     case Slot.SOCK:
-      return { backgroundSize: '150%', backgroundPositionY: '-8vw' };
+      return { backgroundSize: '150%', backgroundPositionY: '165%' };
     case Slot.BOTTOM:
-      return { backgroundSize: '200%', backgroundPositionY: '-7vw' };
+      return { backgroundSize: '200%', backgroundPositionY: '75%' };
     case Slot.ACCESSORY:
-      return { backgroundSize: '55%', backgroundPositionY: '0vw' };
+      return { backgroundSize: '55%', backgroundPositionY: '0%' };
     case Slot.DRESS:
     case Slot.BACKGROUND:
     default:
-      return { backgroundSize: '100%', backgroundPositionY: '0vw' };
+      return { backgroundSize: '100%', backgroundPositionY: '0%' };
   }
 }

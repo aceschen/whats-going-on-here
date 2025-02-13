@@ -65,7 +65,7 @@
     background-color: aliceblue;
     background-repeat: no-repeat;
     background-position-x: center;
-    border-radius: 0.5vw;
+    border-radius: 5%;
     cursor: pointer;
     position: relative;
     overflow: visible;
@@ -79,12 +79,12 @@
   .option-button::after {
     content: "";
     position: absolute;
-    top: -0.35vw;
-    left: -0.35vw;
-    right: -0.35vw;
-    bottom: -0.35vw;
-    border: 0.5vw solid transparent;
-    border-radius: 0.5vw;
+    top: -2%;
+    left: -2%;
+    right: -2%;
+    bottom: -2%;
+    border: min(0.5vw, 1vh) solid transparent;
+    border-radius: 10%;
     pointer-events: none;
   }
 
