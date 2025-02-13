@@ -4,8 +4,6 @@
   import CanvasElementBase from "./CanvasElementBase.svelte";
 
   const slots = [
-    Slot.HAIR,
-    Slot.FACE,
     Slot.SOCK,
     Slot.SHOE,
     Slot.BOTTOM,
@@ -33,9 +31,11 @@
       nothing else (no socks/accessory/etc)
   -->
   <CanvasElement slot={Slot.BACKGROUND} zIndex={0} />
-  <CanvasElementBase imageUrl={baseImage} zIndex={1} />
+  <CanvasElement slot={Slot.HAIR} zIndex={1} />
+  <CanvasElement slot={Slot.FACE} zIndex={2} />
+  <CanvasElementBase imageUrl={baseImage} zIndex={3} />
   {#each slots as slot, index}
-    <CanvasElement {slot} zIndex={index + 2} />
+    <CanvasElement {slot} zIndex={index + 3} />
   {/each}
 </div>
 
