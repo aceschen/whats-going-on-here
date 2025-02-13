@@ -1,11 +1,17 @@
 <script lang="ts">
   import { CATEGORIES } from "../../data/category";
+  import { selectedCategory } from "../../stores/optionsStore";
+  import { resolveIconImageByName } from "../../util/imgUtil";
   import Category from "./Category.svelte";
   import CategoryBase from "./CategoryBase.svelte";
+
+  function selectHome() {
+    selectedCategory.set(undefined);
+  }
 </script>
 
 <div class="category-panel">
-  <CategoryBase imageUrl={"/src/assets/icon/icon_home.png"} />
+  <CategoryBase imageUrl={resolveIconImageByName('icon_home.png')} onClick={selectHome} />
   {#each CATEGORIES as category (category.slot)}
     <Category {category} />
   {/each}
