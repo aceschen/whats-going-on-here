@@ -56,7 +56,7 @@
     {/if}
 
     <div class="category-name">
-      {$selectedCategory.name}
+      {$selectedCategory!.name}
     </div>
 
     {#if currentPage < totalPages - 1}
