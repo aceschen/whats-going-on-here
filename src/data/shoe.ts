@@ -27,8 +27,8 @@ export const SHOE_OPTIONS: Option[] = [
 		password: "adventure",
 		hint: "affair",
 		location: {
-		  locationText: "a recent goodreads review for the rehearsal",
-		  locationUrl: "https://www.goodreads.com/review/show/7313965065"
+		  locationText: "the original picrew",
+		  locationUrl: "https://picrew.me/en/secret_image_maker/PWKh7IAyHubeeBTp"
 		}
 	},
   },

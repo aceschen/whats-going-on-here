@@ -43,7 +43,6 @@
   .canvas {
     height: 96%;
     aspect-ratio: 1;
-    background-color: blanchedalmond;
     border-radius: 2%;
     position: relative;
     overflow: hidden;

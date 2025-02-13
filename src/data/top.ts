@@ -8,13 +8,8 @@ export const TOP_OPTIONS: Option[] = [
     slot: Slot.TOP,
   },
   {
-    name: "testItem1",
+    name: "alwayslate",
     asset: "alwayslate.png",
-    slot: Slot.TOP,
-  },
-  {
-    name: "blackcashmere",
-    asset: "blackcashmere.png",
     slot: Slot.TOP,
   },
   {
@@ -55,6 +50,11 @@ export const TOP_OPTIONS: Option[] = [
   {
     name: "peow",
     asset: "peow.png",
+    slot: Slot.TOP,
+  },
+  {
+    name: "blackcashmere",
+    asset: "blackcashmere.png",
     slot: Slot.TOP,
   },
   {
