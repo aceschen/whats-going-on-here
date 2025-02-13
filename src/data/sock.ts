@@ -30,6 +30,11 @@ export const SOCK_OPTIONS: Option[] = [
 		id: "hellokittyPuzzle",
 		prompt: "a saxophonist plays her part / five stars: a book close to your heart",
 		password: "michigan",
+		hint: "my home",
+		location: {
+		  locationText: "a recent goodreads review for the rehearsal",
+		  locationUrl: "https://www.goodreads.com/review/show/7313965065"
+		}
 	  },
   },
   {
@@ -40,6 +45,11 @@ export const SOCK_OPTIONS: Option[] = [
 		id: "hellokittyPuzzle",
 		prompt: "a bid alum with brush in hand / they painted where they lived: 'i am'",
 		password: "tanghulu",
+		hint: "sticky sweet",
+		location: {
+		  locationText: "jingyi's murals, hover on a quote",
+		  locationUrl: "https://jingyi.me/proj/murals"
+		}
 	  },
   },
   {

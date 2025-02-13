@@ -25,6 +25,11 @@ export const OUTERWEAR_OPTIONS: Option[] = [
 		id: "leatherPuzzle",
 		prompt: "it's party time, a friday night! / we made so many meatless pies",
 		password: "soup",
+		hint: "viand",
+		location: {
+			locationText: "luck homecafe partiful", 
+			locationUrl: "https://partiful.com/e/O6A96RjBanKYIqWSzVt8"
+		}
     },
   },
   {

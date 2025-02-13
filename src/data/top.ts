@@ -3,6 +3,11 @@ import { Slot } from "../types/slot";
 
 export const TOP_OPTIONS: Option[] = [
   {
+    name: "old_coolsclub",
+    asset: "old_coolsclub.png",
+    slot: Slot.TOP,
+  },
+  {
     name: "testItem1",
     asset: "alwayslate.png",
     slot: Slot.TOP,
@@ -60,6 +65,11 @@ export const TOP_OPTIONS: Option[] = [
       id: "alwaysbesideyouPuzzle",
       prompt: "so recently i thought i saw / three buddies, like in bonbonbon",
       password: "auckland",
+      hint: "home",
+      location: {
+        locationText: "buddychive, in michigan",
+        locationUrl: "https://www.instagram.com/p/DEd-cTrpbHa"
+      }
     },
   },
   {
@@ -70,6 +80,11 @@ export const TOP_OPTIONS: Option[] = [
       id: "blackwhitetankPuzzle",
       prompt: "when autumn comes i'm not yet done / november joy, ar-chives of fun",
       password: "snuggle",
+      hint: "hug",
+      location: {
+        locationText: "buddychive, maximum-carousel autumn",
+        locationUrl: "https://open.spotify.com/playlist/0tY6CARSOnte9He43kdIQr"
+      }
     },
   },
   {
@@ -80,6 +95,11 @@ export const TOP_OPTIONS: Option[] = [
       id: "denimtankPuzzle",
       prompt: "ann arbor's an expensive flight / at least it's cheaper on my site",
       password: "seattle",
+      hint: "city",
+      location: {
+        locationText: "my website, under michigan",
+        locationUrl: "https://www.aceschen.com/"
+      }
     },
   },
   {
@@ -90,6 +110,11 @@ export const TOP_OPTIONS: Option[] = [
       id: "myhoodiePuzzle",
       prompt: "my hand in yours the whole night long / we'll dance together to these songs",
       password: "waltz",
+      hint: "dance",
+      location: {
+        locationText: "our wedding playlist",
+        locationUrl: "https://open.spotify.com/playlist/0tY6CARSOnte9He43kdIQr"
+      }
     },
   },
   {
@@ -100,6 +125,11 @@ export const TOP_OPTIONS: Option[] = [
       id: "poppyPuzzle",
       prompt: "for chazuke, the o's polite / i guess tday is nice alright",
       password: "nabe",
+      hint: "soup",
+      location: {
+        locationText: "anicedaytoday, chazuke",
+        locationUrl: "https://www.instagram.com/p/DDVRt5VzcLTB2lNN7VCkuqilpf7vLCmkDbiI200"
+      }
     },
   },
   {
@@ -120,11 +150,6 @@ export const TOP_OPTIONS: Option[] = [
   {
     name: "old_carmicowhite",
     asset: "old_carmicowhite.png",
-    slot: Slot.TOP,
-  },
-  {
-    name: "old_coolsclub",
-    asset: "old_coolsclub.png",
     slot: Slot.TOP,
   },
   {

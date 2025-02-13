@@ -25,6 +25,11 @@ export const SHOE_OPTIONS: Option[] = [
 		id: "catslipper_puzzle",
 		prompt: "this alpha version was all yours / in march of twenty twenty-four(s) ",
 		password: "adventure",
+		hint: "affair",
+		location: {
+		  locationText: "a recent goodreads review for the rehearsal",
+		  locationUrl: "https://www.goodreads.com/review/show/7313965065"
+		}
 	},
   },
   {

@@ -50,7 +50,7 @@
     cursor: pointer;
     position: relative;
     overflow: visible;
-    transition: all 0.3s ease;
+    transition: all 0s ease;
   }
 
   .option-button::after {
