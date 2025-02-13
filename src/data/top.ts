@@ -63,7 +63,7 @@ export const TOP_OPTIONS: Option[] = [
     slot: Slot.TOP,
     puzzle: {
       id: "alwaysbesideyouPuzzle",
-      prompt: "so recently i thought i saw / three buddies, like in bonbonbon",
+      prompt: "so recently i thought i saw / three buddies inside bonbonbon",
       password: "auckland",
       hint: "home",
       location: {

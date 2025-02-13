@@ -33,7 +33,7 @@
     right: -0.35%;
     bottom: -0.35%;
     border: min(0.5vw, 1vh) solid transparent;
-    border-radius: 10%;
+    border-radius: 5%;
     pointer-events: none;
   }
 

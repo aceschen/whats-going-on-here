@@ -91,8 +91,9 @@ export function getImageStyle(slot: Slot): { backgroundSize: string; backgroundP
     case Slot.BOTTOM:
       return { backgroundSize: '190%', backgroundPositionY: '100%' };
     case Slot.ACCESSORY:
-      return { backgroundSize: '55%', backgroundPositionY: '0%' };
+      return { backgroundSize: '130%', backgroundPositionY: '50%' };
     case Slot.DRESS:
+      return { backgroundSize: '100%', backgroundPositionY: '0%' };
     case Slot.BACKGROUND:
     default:
       return { backgroundSize: '100%', backgroundPositionY: '0%' };

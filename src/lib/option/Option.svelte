@@ -84,7 +84,7 @@
     right: -2%;
     bottom: -2%;
     border: min(0.5vw, 1vh) solid transparent;
-    border-radius: 10%;
+    border-radius: 5%;
     pointer-events: none;
   }
 

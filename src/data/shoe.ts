@@ -22,7 +22,7 @@ export const SHOE_OPTIONS: Option[] = [
 	asset: "clue_catslipper.png",
 	slot: Slot.SHOE,
 	puzzle: {
-		id: "catslipper_puzzle",
+		id: "catslipperPuzzle",
 		prompt: "this alpha version was all yours / in march of twenty twenty-four(s) ",
 		password: "adventure",
 		hint: "affair",

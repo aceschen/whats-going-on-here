@@ -32,7 +32,7 @@ export const SOCK_OPTIONS: Option[] = [
 		password: "michigan",
 		hint: "my home",
 		location: {
-		  locationText: "a recent goodreads review for the rehearsal",
+		  locationText: "a goodreads review for the rehearsal",
 		  locationUrl: "https://www.goodreads.com/review/show/7313965065"
 		}
 	  },
@@ -42,7 +42,7 @@ export const SOCK_OPTIONS: Option[] = [
 	asset: "clue_red.png",
 	slot: Slot.SOCK,
 	puzzle: {
-		id: "hellokittyPuzzle",
+		id: "redsockPuzzle",
 		prompt: "a bid alum with brush in hand / they painted where they lived: 'i am'",
 		password: "tanghulu",
 		hint: "sticky sweet",

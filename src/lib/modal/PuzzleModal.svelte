@@ -11,22 +11,26 @@
   } from "../../stores/puzzleStore";
 
   let enteredPassword = "";
+  let submitText = "submit";
 
   function closeModal() {
     enteredPassword = "";
     currentPuzzle.set(undefined);
+    submitText = "submit";
   }
 
   function checkPassword() {
     if (enteredPassword === $currentPuzzle?.password) {
-      alert("Correct password");
+      // alert("Correct password");
       markPuzzleSolved($currentPuzzle!);
       const option = $currentAssociatedOption!;
       const store = getStoreBySlot(option.slot);
       store.set(option);
       closeModal();
     } else {
-      alert("Wrong password");
+      // alert("Wrong password");
+      submitText = "try again";
+      
     }
   }
 
@@ -55,6 +59,12 @@
       checkPassword();
     }
   }
+
+  function onPasswordClick(event: MouseEvent) {
+    if (event.currentTarget === event.target) {
+      checkPassword();
+    }
+  }
 </script>
 
 {#if $currentPuzzle}
@@ -75,39 +85,47 @@
       </button>
 
       <h2>{$currentPuzzle.prompt}</h2>
-
-      {#if $currentPuzzle.hint}
-        {#if $isHintActivated($currentPuzzle)}
-          <p class="hint">{$currentPuzzle.hint}</p>
-        {:else}
-          <button class="hint-button" on:click={onShowHintClick}>
-            click to reveal clue hint
-          </button>
-        {/if}
-      {/if}
+      
 
       {#if $currentPuzzle.location}
         {#if $isLocationActivated($currentPuzzle)}
-          <a href={$currentPuzzle.location.locationUrl}
-            >{$currentPuzzle.location.locationText}</a
+          <a href={$currentPuzzle.location.locationUrl} target="_blank"
+            >puzzle location: {$currentPuzzle.location.locationText}</a
           >
         {:else}
           <button class="hint-button" on:click={onShowLocationClick}>
-            click to reveal clue location
+            show puzzle location
+          </button>
+        {/if}
+
+      {/if}{#if $currentPuzzle.hint}
+        {#if $isHintActivated($currentPuzzle)}
+          <p class="hint">definition: {$currentPuzzle.hint}</p>
+        {:else}
+          <button class="hint-button" on:click={onShowHintClick}>
+            show puzzle hint
           </button>
         {/if}
       {/if}
 
-      <input
-        bind:value={enteredPassword}
-        placeholder="Enter password"
-        on:keydown={onPasswordKeydown}
-      />
+      <div class="submit-answer">
+        <input
+          class="answer-input"
+          bind:value={enteredPassword}
+          placeholder="puzzle answer"
+          on:keydown={onPasswordKeydown}
+        />
+        <button class="submit-button" on:click={onPasswordClick}>
+          {submitText}
+        </button>
+      </div>
+
     </div>
   </div>
 {/if}
 
 <style>
+
   .modal-overlay {
     position: fixed;
     top: 0;
@@ -120,9 +138,12 @@
     justify-content: center;
     z-index: 999;
     outline: none;
+    text-align: left;
   }
 
   .modal {
+    align-items: left;
+    justify-content: left;
     position: relative;
     background: white;
     color: black;
@@ -130,13 +151,14 @@
     border-radius: 8px;
     max-width: 400px;
     width: 90%;
+    border: solid var(--red-accent) 0.8rem;
   }
 
   .close-button {
-    color: black;
+    color: var(--red-accent);
     position: absolute;
     top: 1rem;
-    right: 1rem;
+    right: 1.5rem;
     background: transparent;
     border: none;
     font-size: 1.25rem;
@@ -146,14 +168,56 @@
   .hint {
     font-style: italic;
     margin: 1rem 0;
-    color: #555;
+    color: var(--red-accent);
   }
 
   .hint-button {
     display: block;
     margin: 1rem 0;
-    padding: 0.5rem 1rem;
+    // padding: 0.5rem 1rem;
     font-size: 1rem;
     cursor: pointer;
+    background-color: white;
+    color: #3d3d3d;
+  }
+
+
+  .answer-input {
+    font-family: "Darumadrop"; 
+    font-size: 1rem;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    border: solid var(--red-accent);
+  }
+
+  .answer-input:focus {
+    font-family: "Darumadrop"; 
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: solid var(--red-accent);
+    outline: none;
+  }
+
+  .submit-button {
+    background-color: var(--red-accent);
+    font-size: 1rem;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    margin-left: 1rem;
+  }
+
+  .submit-button:hover {
+    cursor: pointer;
+  }
+
+  .submit-button:active {
+    background-color: #c45151;
+  }
+
+  a {
+    text-decoration: underline;
+    color: var(--red-accent);
   }
 </style>

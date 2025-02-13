@@ -62,7 +62,7 @@ export const DRESS_OPTIONS: Option[] = [
 	  password: "porcelain",
 	  hint: "circles of china",
 	  location: {
-		locationText: "anicedaytoday, water lillies",
+		locationText: "anicedaytoday, water lilies",
 		locationUrl: "https://www.instagram.com/p/C87OFYOvkj2DvnJEx0RgRCoNZLgy0TV2hWFqfA0/?img_index=1"
    	  }
 	}
@@ -70,6 +70,15 @@ export const DRESS_OPTIONS: Option[] = [
   {
 	name: "clue_renfaire",
 	asset: "clue_renfaire.png",
-	slot: Slot.DRESS,
+	slot: Slot.DRESS,puzzle: {
+		id: "renfairePuzzle",
+		prompt: "he's halfway round the world tonight / a friend that you last saw online",
+		password: "renaissance",
+		hint: "rebirth",
+		location: {
+		  locationText: "henry's site",
+		  locationUrl: "https://qwook.io/"
+		   }
+	  }
   },
 ];
