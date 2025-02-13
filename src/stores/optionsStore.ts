@@ -3,30 +3,41 @@ import type { Option } from "../types/option";
 import { Slot } from "../types/slot";
 import type { Category } from "../types/category";
 import { CATEGORIES } from "../data/category";
+import { BACKGROUND_OPTIONS } from "../data/background";
+import { TOP_OPTIONS } from "../data/top";
+import { FACE_OPTIONS } from "../data/face";
+import { HAIR_OPTIONS } from "../data/hair";
+import { BOTTOM_OPTIONS } from "../data/bottom";
+
+const DEFAULT_FACE = FACE_OPTIONS[0];
+const DEFAULT_HAIR = HAIR_OPTIONS[0];
+const DEFAULT_TOP = TOP_OPTIONS[0];
+const DEFAULT_BOTTOM = BOTTOM_OPTIONS[0];
+const DEFAULT_BACKGROUND = BACKGROUND_OPTIONS[0];
 
 // Selected category store
 export const selectedCategory = writable<Category | undefined>(undefined);
 
 // Stores for each slot
-export const hairOption = writable<Option | undefined>(undefined);
-export const faceOption = writable<Option | undefined>(undefined);
-export const topOption = writable<Option | undefined>(undefined);
+export const hairOption = writable<Option>(DEFAULT_HAIR);
+export const faceOption = writable<Option>(DEFAULT_FACE);
+export const topOption = writable<Option | undefined>(DEFAULT_TOP);
 export const sockOption = writable<Option | undefined>(undefined);
 export const shoeOption = writable<Option | undefined>(undefined);
 export const outerwearOption = writable<Option | undefined>(undefined);
 export const dressOption = writable<Option | undefined>(undefined);
-export const bottomOption = writable<Option | undefined>(undefined);
-export const backgroundOption = writable<Option | undefined>(undefined);
+export const bottomOption = writable<Option | undefined>(DEFAULT_BOTTOM);
+export const backgroundOption = writable<Option>(DEFAULT_BACKGROUND);
 export const accessoryOption = writable<Option | undefined>(undefined);
 
 // Helper function to set state by slot
 function setStateBySlot(option: Option | undefined, slot: Slot) {
   switch (slot) {
     case Slot.HAIR:
-      hairOption.set(option);
+      hairOption.set(option!);
       break;
     case Slot.FACE:
-      faceOption.set(option);
+      faceOption.set(option!);
       break;
     case Slot.TOP:
       topOption.set(option);
@@ -47,7 +58,7 @@ function setStateBySlot(option: Option | undefined, slot: Slot) {
       bottomOption.set(option);
       break;
     case Slot.BACKGROUND:
-      backgroundOption.set(option);
+      backgroundOption.set(option!);
       break;
     case Slot.ACCESSORY:
       accessoryOption.set(option);
@@ -63,7 +74,23 @@ export function setOptionState(option: Option) {
 }
 
 export function clearOptionState(slot: Slot) {
-  setStateBySlot(undefined, slot);
+  // THIS IS NEVER SUPPOSED TO HAPPEN
+  // I'M GOING TO HANDLE IT ANYWAYS
+  // AND NOT THROW AN EXCEPTION. LOL.
+
+  switch (slot) {
+    case Slot.HAIR:
+      hairOption.set(DEFAULT_HAIR);
+      break;
+    case Slot.FACE:
+      faceOption.set(DEFAULT_FACE);
+      break;
+    case Slot.BACKGROUND:
+      backgroundOption.set(DEFAULT_BACKGROUND);
+      break;
+    default:
+      setStateBySlot(undefined, slot);
+  }
 }
 
 export function getStoreBySlot(slot: Slot): Writable<Option | undefined> {

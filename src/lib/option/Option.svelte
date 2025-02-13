@@ -7,31 +7,35 @@
   import type { Option } from "../../types/option";
   import { resolveImage } from "../../util/imgUtil";
   import { currentPuzzle, isPuzzleSolved } from "../../stores/puzzleStore";
+  import { NON_REMOVABLE_SLOTS } from "../../types/slot";
 
   export let option: Option;
 
   $: imageUrl = resolveImage(option);
-  $: unlocked = $isPuzzleSolved(option.puzzle);
+  $: isUnlocked = $isPuzzleSolved(option.puzzle);
 
   // roflcopter
   $: selectedOption = getStoreBySlot(option.slot);
   $: isSelected = $selectedOption?.name == option.name;
 
   function selectOption() {
-    if (unlocked) {
-      if (isSelected) {
+    if (!isUnlocked) {
+      currentPuzzle.set(option.puzzle);
+      return;
+    }
+
+    if (isSelected) {
+      if (!NON_REMOVABLE_SLOTS.has(option.slot)) {
         clearOptionState(option.slot);
-      } else {
-        setOptionState(option);
       }
     } else {
-      currentPuzzle.set(option.puzzle);
+      setOptionState(option);
     }
   }
 </script>
 
 <div
-  class="option-button {unlocked ? '' : 'locked'} {isSelected
+  class="option-button {isUnlocked ? '' : 'locked'} {isSelected
     ? 'selected'
     : ''}"
   style="background-image: url({imageUrl});"
