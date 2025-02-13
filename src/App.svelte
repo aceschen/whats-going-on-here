@@ -5,6 +5,8 @@
   import PasswordPrompt from "./lib/modal/PasswordPrompt.svelte";
   import CategoryPanel from "./lib/category/CategoryPanel.svelte";
   import PuzzleModal from "./lib/modal/PuzzleModal.svelte";
+  import { selectedCategory } from "./stores/optionsStore";
+  import Home from "./lib/Home.svelte";
 
   let isAuthenticated = false;
 
@@ -21,7 +23,11 @@
   <main>
     <container>
       <Canvas />
-      <OptionsPanel />
+      {#if $selectedCategory}
+        <OptionsPanel />
+      {:else}
+        <Home />
+      {/if}
     </container>
     <PuzzleModal />
     <CategoryPanel />

@@ -5,7 +5,7 @@ import type { Category } from "../types/category";
 import { CATEGORIES } from "../data/category";
 
 // Selected category store
-export const selectedCategory = writable<Category>(CATEGORIES[0]);
+export const selectedCategory = writable<Category | undefined>(undefined);
 
 // Stores for each slot
 export const hairOption = writable<Option | undefined>(undefined);
