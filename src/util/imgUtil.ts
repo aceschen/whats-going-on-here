@@ -1,5 +1,5 @@
 import type { Option } from "../types/option";
-import type { Slot } from "../types/slot";
+import { Slot } from "../types/slot";
 
 // This whole file is a bad idea??
 // Whatever
@@ -75,4 +75,26 @@ export function resolveImage(option: Option | undefined): string {
 
   const images = imagesBySlot[option.slot];
   return images ? resolveFromImages(images, option.asset) : "";
+}
+
+export function getImageStyle(slot: Slot): { backgroundSize: string; backgroundPositionY: string } {
+  switch (slot) {
+    case Slot.HAIR:
+    case Slot.FACE:
+      return { backgroundSize: '250%', backgroundPositionY: '-1vw' };
+    case Slot.OUTERWEAR:
+    case Slot.TOP:
+      return { backgroundSize: '150%', backgroundPositionY: '-2vw' };
+    case Slot.SHOE:
+    case Slot.SOCK:
+      return { backgroundSize: '150%', backgroundPositionY: '-8vw' };
+    case Slot.BOTTOM:
+      return { backgroundSize: '200%', backgroundPositionY: '-7vw' };
+    case Slot.ACCESSORY:
+      return { backgroundSize: '55%', backgroundPositionY: '0vw' };
+    case Slot.DRESS:
+    case Slot.BACKGROUND:
+    default:
+      return { backgroundSize: '100%', backgroundPositionY: '0vw' };
+  }
 }

@@ -5,7 +5,7 @@
     setOptionState,
   } from "../../stores/optionsStore";
   import type { Option } from "../../types/option";
-  import { resolveIconImageByName, resolveImage } from "../../util/imgUtil";
+  import { getImageStyle, resolveIconImageByName, resolveImage } from "../../util/imgUtil";
   import {
     currentAssociatedOption,
     currentPuzzle,
@@ -19,17 +19,13 @@
   $: lockedImageUrl = resolveIconImageByName('icon_heart.png');
   $: isUnlocked = $isPuzzleSolved(option.puzzle);
 
+  $: imageStyle = getImageStyle(option.slot);
+
   // roflcopter
   $: selectedOption = getStoreBySlot(option.slot);
   $: isSelected = $selectedOption?.name === option.name;
 
-  function selectOption() {
-    if (!isUnlocked) {
-      currentPuzzle.set(option.puzzle);
-      currentAssociatedOption.set(option);
-      return;
-    }
-
+  function selectUnlockedOption() {
     if (isSelected) {
       if (!NON_REMOVABLE_SLOTS.has(option.slot)) {
         clearOptionState(option.slot);
@@ -38,22 +34,37 @@
       setOptionState(option);
     }
   }
+
+  function selectLockedOption() {
+    currentPuzzle.set(option.puzzle);
+    currentAssociatedOption.set(option);
+  }
 </script>
 
-<div
-  class="option-button {isUnlocked ? '' : 'locked'} {isSelected ? 'selected' : ''}"
-  style="background-image: url({isUnlocked ? optionImageUrl : lockedImageUrl});"
-  on:click={selectOption}
-/>
+{#if isUnlocked} 
+  <div
+    class="option-button {isSelected ? 'selected' : ''}"
+    style="
+      background-image: url({optionImageUrl}); 
+      background-size: {imageStyle.backgroundSize}; 
+      background-position-y: {imageStyle.backgroundPositionY};"
+    on:click={selectUnlockedOption}
+  />
+{:else}
+  <div
+    class="option-button locked"
+    style="background-image: url({lockedImageUrl});"
+    on:click={selectLockedOption}
+  />
+{/if}
 
 <style>
   .option-button {
     width: 100%;
     aspect-ratio: 1;
     background-color: aliceblue;
-    background-size: contain;
-    background-position: center;
     background-repeat: no-repeat;
+    background-position-x: center;
     border-radius: 0.5vw;
     cursor: pointer;
     position: relative;
@@ -62,6 +73,7 @@
 
   .option-button.locked {
     background-size: 55%;
+    background-position: center;
   }
 
   .option-button::after {
