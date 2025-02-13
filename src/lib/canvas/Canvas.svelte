@@ -1,6 +1,7 @@
 <script lang="ts">
   import { Slot } from "../../types/slot";
   import CanvasElement from "./CanvasElement.svelte";
+  import CanvasElementBase from "./CanvasElementBase.svelte";
 
   const slots = [
     Slot.HAIR,
@@ -13,11 +14,14 @@
     Slot.OUTERWEAR,
     Slot.ACCESSORY,
   ];
+
+  // Lol
+  const images: Record<string, any> = import.meta.glob("/src/assets/base.png", { eager: true });
+  const baseImage = images["/src/assets/base.png"].default;
+
 </script>
 
 <div class="canvas">
-  <CanvasElement slot={Slot.BACKGROUND} zIndex={0} />
-
   <!--these should be the default assets: 
       base
       hair / long_black
@@ -27,7 +31,8 @@
       background / old_offwhite
       nothing else (no socks/accessory/etc)
   -->
-
+  <CanvasElement slot={Slot.BACKGROUND} zIndex={0} />
+  <CanvasElementBase imageUrl={baseImage} zIndex={1} />
   {#each slots as slot, index}
     <CanvasElement {slot} zIndex={index + 2} />
   {/each}

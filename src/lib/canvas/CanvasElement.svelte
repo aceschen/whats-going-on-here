@@ -2,6 +2,7 @@
   import { getStoreBySlot } from "../../stores/optionsStore";
   import type { Slot } from "../../types/slot";
   import { resolveImage } from "../../util/imgUtil";
+  import CanvasElementBase from "./CanvasElementBase.svelte";
 
   export let slot: Slot;
   export let zIndex: number;
@@ -11,20 +12,4 @@
   $: imageUrl = resolveImage($selectedStore);
 </script>
 
-<div
-  class="canvas-element"
-  style="background-image: url({imageUrl}); z-index: {zIndex};"
-></div>
-
-<style>
-  .canvas-element {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-</style>
+<CanvasElementBase {imageUrl} {zIndex} />
