@@ -13,12 +13,7 @@
     bottomOption,
     accessoryOptions,
   } from "../../stores/optionsStore";
-
-  // Lol
-  const images: Record<string, any> = import.meta.glob("/src/assets/base.png", {
-    eager: true,
-  });
-  const baseImage = images["/src/assets/base.png"].default;
+  import { resolveBaseImage } from "../../util/imgUtil";
 </script>
 
 <div class="canvas">
@@ -36,7 +31,7 @@
   <CanvasElement option={$faceOption} zIndex={2} />
 
   <!-- Base image layer -->
-  <CanvasElementBase imageUrl={baseImage} zIndex={3} />
+  <CanvasElementBase imageUrl={resolveBaseImage()} zIndex={3} />
 
   <CanvasElement option={$sockOption} zIndex={4} />
   <CanvasElement option={$shoeOption} zIndex={5} />
