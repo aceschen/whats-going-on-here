@@ -1,5 +1,8 @@
 <script lang="ts">
-  import { getStoreBySlot } from "../../stores/optionsStore";
+  import {
+    getStoreBySlot,
+    setAccessoryOption,
+  } from "../../stores/optionsStore";
   import {
     currentAssociatedOption,
     currentPuzzle,
@@ -9,6 +12,7 @@
     markLocationActivated,
     markPuzzleSolved,
   } from "../../stores/puzzleStore";
+  import { Slot } from "../../types/slot";
 
   let enteredPassword = "";
   let submitText = "submit";
@@ -21,16 +25,17 @@
 
   function checkPassword() {
     if (enteredPassword === $currentPuzzle?.password) {
-      // alert("Correct password");
       markPuzzleSolved($currentPuzzle!);
       const option = $currentAssociatedOption!;
-      const store = getStoreBySlot(option.slot);
-      store.set(option);
+      if (option.slot === Slot.ACCESSORY) {
+        setAccessoryOption(option);
+      } else {
+        const store = getStoreBySlot(option.slot);
+        store.set(option);
+      }
       closeModal();
     } else {
-      // alert("Wrong password");
       submitText = "try again";
-      
     }
   }
 
@@ -85,7 +90,6 @@
       </button>
 
       <h2>{$currentPuzzle.prompt}</h2>
-      
 
       {#if $currentPuzzle.location}
         {#if $isLocationActivated($currentPuzzle)}
@@ -97,7 +101,6 @@
             show puzzle location
           </button>
         {/if}
-
       {/if}{#if $currentPuzzle.hint}
         {#if $isHintActivated($currentPuzzle)}
           <p class="hint">definition: {$currentPuzzle.hint}</p>
@@ -119,13 +122,11 @@
           {submitText}
         </button>
       </div>
-
     </div>
   </div>
 {/if}
 
 <style>
-
   .modal-overlay {
     position: fixed;
     top: 0;
@@ -174,16 +175,14 @@
   .hint-button {
     display: block;
     margin: 1rem 0;
-    // padding: 0.5rem 1rem;
     font-size: 1rem;
     cursor: pointer;
     background-color: white;
     color: #3d3d3d;
   }
 
-
   .answer-input {
-    font-family: "Darumadrop"; 
+    font-family: "Darumadrop";
     font-size: 1rem;
     padding: 0.5rem;
     margin-bottom: 1rem;
@@ -192,7 +191,7 @@
   }
 
   .answer-input:focus {
-    font-family: "Darumadrop"; 
+    font-family: "Darumadrop";
     padding: 0.5rem;
     border-radius: 4px;
     border: solid var(--red-accent);

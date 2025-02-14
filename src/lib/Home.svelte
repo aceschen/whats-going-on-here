@@ -1,6 +1,5 @@
 <script lang="ts">
   import { areAllPuzzlesSolved } from "../stores/puzzleStore";
-
 </script>
 
 <div>

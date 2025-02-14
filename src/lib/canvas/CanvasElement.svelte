@@ -1,15 +1,12 @@
 <script lang="ts">
-  import { getStoreBySlot } from "../../stores/optionsStore";
-  import type { Slot } from "../../types/slot";
   import { resolveImage } from "../../util/imgUtil";
   import CanvasElementBase from "./CanvasElementBase.svelte";
+  import type { Option } from "../../types/option";
 
-  export let slot: Slot;
+  export let option: Option | undefined;
   export let zIndex: number;
 
-  const selectedStore = getStoreBySlot(slot);
-
-  $: imageUrl = resolveImage($selectedStore);
+  $: imageUrl = resolveImage(option);
 </script>
 
 <CanvasElementBase {imageUrl} {zIndex} />

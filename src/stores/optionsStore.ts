@@ -15,10 +15,8 @@ const DEFAULT_TOP = TOP_OPTIONS[0];
 const DEFAULT_BOTTOM = BOTTOM_OPTIONS[0];
 const DEFAULT_BACKGROUND = BACKGROUND_OPTIONS[0];
 
-// Selected category store
 export const selectedCategory = writable<Category | undefined>(undefined);
 
-// Stores for each slot
 export const hairOption = writable<Option>(DEFAULT_HAIR);
 export const faceOption = writable<Option>(DEFAULT_FACE);
 export const topOption = writable<Option | undefined>(DEFAULT_TOP);
@@ -28,10 +26,11 @@ export const outerwearOption = writable<Option | undefined>(undefined);
 export const dressOption = writable<Option | undefined>(undefined);
 export const bottomOption = writable<Option | undefined>(DEFAULT_BOTTOM);
 export const backgroundOption = writable<Option>(DEFAULT_BACKGROUND);
-export const accessoryOption = writable<Option | undefined>(undefined);
 
-// Helper function to set state by slot
-function setStateBySlot(option: Option | undefined, slot: Slot) {
+// WOW
+export const accessoryOptions = writable<Set<Option>>(new Set());
+
+function setStateBySlot(option: Option, slot: Slot) {
   switch (slot) {
     case Slot.HAIR:
       hairOption.set(option!);
@@ -61,24 +60,54 @@ function setStateBySlot(option: Option | undefined, slot: Slot) {
       backgroundOption.set(option!);
       break;
     case Slot.ACCESSORY:
-      accessoryOption.set(option);
+      accessoryOptions.update((currentAccessories) => {
+        // We need to create a whole ass new set to keep the object reactive
+        const updatedAccessories = new Set(currentAccessories);
+        updatedAccessories.add(option);
+        return updatedAccessories;
+      });
       break;
     default:
       console.warn(`Unhandled slot: ${slot}`);
   }
 }
 
-// Public functions to interact with slot-specific stores
 export function setOptionState(option: Option) {
   setStateBySlot(option, option.slot);
 }
 
-export function clearOptionState(slot: Slot) {
-  // THIS IS NEVER SUPPOSED TO HAPPEN
-  // I'M GOING TO HANDLE IT ANYWAYS
-  // AND NOT THROW AN EXCEPTION. LOL.
+export function setAccessoryOption(option: Option) {
+  if (option.slot !== Slot.ACCESSORY) {
+    return console.warn(`Tried to set ${option.name} as ACCESSORY`);
+  }
 
-  switch (slot) {
+  accessoryOptions.update((currentAccessories) => {
+    const updatedAccessories = new Set(currentAccessories);
+    updatedAccessories.add(option);
+    return updatedAccessories;
+  });
+}
+
+export function unsetAccessoryOption(option: Option) {
+  if (option.slot !== Slot.ACCESSORY) {
+    return console.warn(
+      `Tried to unset ${option.name} (${option.slot}) as ACCESSORY`,
+    );
+  }
+
+  accessoryOptions.update((currentAccessories) => {
+    // Don't mutate existing set ("best practice")
+    const updatedAccessories = new Set(
+      Array.from(currentAccessories).filter(
+        (accessory) => accessory.name !== option.name,
+      ),
+    );
+    return updatedAccessories;
+  });
+}
+
+export function unsetOptionState(option: Option) {
+  switch (option.slot) {
     case Slot.HAIR:
       hairOption.set(DEFAULT_HAIR);
       break;
@@ -88,8 +117,31 @@ export function clearOptionState(slot: Slot) {
     case Slot.BACKGROUND:
       backgroundOption.set(DEFAULT_BACKGROUND);
       break;
+    case Slot.TOP:
+      topOption.set(undefined);
+      break;
+    case Slot.SOCK:
+      sockOption.set(undefined);
+      break;
+    case Slot.SHOE:
+      shoeOption.set(undefined);
+      break;
+    case Slot.OUTERWEAR:
+      outerwearOption.set(undefined);
+      break;
+    case Slot.DRESS:
+      dressOption.set(undefined);
+      break;
+    case Slot.BOTTOM:
+      bottomOption.set(undefined);
+      break;
+    case Slot.ACCESSORY:
+      unsetAccessoryOption(option);
+      break;
     default:
-      setStateBySlot(undefined, slot);
+      console.warn(
+        `clearOptionState called for unhandled slot: ${option.slot}`,
+      );
   }
 }
 
@@ -113,8 +165,6 @@ export function getStoreBySlot(slot: Slot): Writable<Option | undefined> {
       return bottomOption;
     case Slot.BACKGROUND:
       return backgroundOption;
-    case Slot.ACCESSORY:
-      return accessoryOption;
     default:
       console.warn(`Unhandled slot in getStoreBySlot: ${slot}`);
       return backgroundOption;

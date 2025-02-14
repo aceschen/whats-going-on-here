@@ -77,25 +77,28 @@ export function resolveImage(option: Option | undefined): string {
   return images ? resolveFromImages(images, option.asset) : "";
 }
 
-export function getImageStyle(slot: Slot): { backgroundSize: string; backgroundPositionY: string } {
+export function getImageStyle(slot: Slot): {
+  backgroundSize: string;
+  backgroundPositionY: string;
+} {
   switch (slot) {
     case Slot.HAIR:
     case Slot.FACE:
-      return { backgroundSize: '250%', backgroundPositionY: '4%' };
+      return { backgroundSize: "250%", backgroundPositionY: "4%" };
     case Slot.OUTERWEAR:
     case Slot.TOP:
-      return { backgroundSize: '170%', backgroundPositionY: '40%' };
+      return { backgroundSize: "170%", backgroundPositionY: "40%" };
     case Slot.SHOE:
     case Slot.SOCK:
-      return { backgroundSize: '170%', backgroundPositionY: '135%' };
+      return { backgroundSize: "170%", backgroundPositionY: "135%" };
     case Slot.BOTTOM:
-      return { backgroundSize: '190%', backgroundPositionY: '100%' };
+      return { backgroundSize: "190%", backgroundPositionY: "100%" };
     case Slot.ACCESSORY:
-      return { backgroundSize: '120%', backgroundPositionY: '-30%' };
+      return { backgroundSize: "120%", backgroundPositionY: "-30%" };
     case Slot.DRESS:
-      return { backgroundSize: '120%', backgroundPositionY: '100%' };
+      return { backgroundSize: "120%", backgroundPositionY: "100%" };
     case Slot.BACKGROUND:
     default:
-      return { backgroundSize: '100%', backgroundPositionY: '0%' };
+      return { backgroundSize: "100%", backgroundPositionY: "0%" };
   }
 }

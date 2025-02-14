@@ -19,22 +19,22 @@
   }
 </script>
 
-  <main>
-    {#if isAuthenticated}
-        <container>
-          <Canvas />
-          {#if $selectedCategory}
-            <OptionsPanel />
-          {:else}
-            <Home />
-          {/if}
-        </container>
-        <PuzzleModal />
-        <CategoryPanel />
-    {:else}
-      <PasswordPrompt onAuthenticated={handleAuthentication} />
-    {/if}
-  </main>
+<main>
+  {#if isAuthenticated}
+    <container>
+      <Canvas />
+      {#if $selectedCategory}
+        <OptionsPanel />
+      {:else}
+        <Home />
+      {/if}
+    </container>
+    <PuzzleModal />
+    <CategoryPanel />
+  {:else}
+    <PasswordPrompt onAuthenticated={handleAuthentication} />
+  {/if}
+</main>
 
 <style>
   main {

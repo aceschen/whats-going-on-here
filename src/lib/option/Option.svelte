@@ -1,34 +1,44 @@
 <script lang="ts">
   import {
-    clearOptionState,
+    accessoryOptions,
     getStoreBySlot,
     setOptionState,
+    unsetOptionState,
   } from "../../stores/optionsStore";
   import type { Option } from "../../types/option";
-  import { getImageStyle, resolveIconImageByName, resolveImage } from "../../util/imgUtil";
+  import {
+    getImageStyle,
+    resolveIconImageByName,
+    resolveImage,
+  } from "../../util/imgUtil";
   import {
     currentAssociatedOption,
     currentPuzzle,
     isPuzzleSolved,
   } from "../../stores/puzzleStore";
-  import { NON_REMOVABLE_SLOTS } from "../../types/slot";
+  import { NON_REMOVABLE_SLOTS, Slot } from "../../types/slot";
 
   export let option: Option;
 
   $: optionImageUrl = resolveImage(option);
-  $: lockedImageUrl = resolveIconImageByName('icon_heart.png');
+  $: lockedImageUrl = resolveIconImageByName("icon_heart.png");
   $: isUnlocked = $isPuzzleSolved(option.puzzle);
 
   $: imageStyle = getImageStyle(option.slot);
 
   // roflcopter
-  $: selectedOption = getStoreBySlot(option.slot);
-  $: isSelected = $selectedOption?.name === option.name;
+  $: nonAccessoryStore =
+    option.slot !== Slot.ACCESSORY ? getStoreBySlot(option.slot) : null;
+
+  $: isSelected =
+    option.slot === Slot.ACCESSORY
+      ? Array.from($accessoryOptions).some((acc) => acc.name === option.name)
+      : $nonAccessoryStore?.name === option.name;
 
   function selectUnlockedOption() {
     if (isSelected) {
       if (!NON_REMOVABLE_SLOTS.has(option.slot)) {
-        clearOptionState(option.slot);
+        unsetOptionState(option);
       }
     } else {
       setOptionState(option);
@@ -41,7 +51,7 @@
   }
 </script>
 
-{#if isUnlocked} 
+{#if isUnlocked}
   <div
     class="option-button {isSelected ? 'selected' : ''}"
     style="

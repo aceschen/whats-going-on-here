@@ -1,17 +1,18 @@
 <script lang="ts">
-  import { Slot } from "../../types/slot";
   import CanvasElement from "./CanvasElement.svelte";
   import CanvasElementBase from "./CanvasElementBase.svelte";
-
-  const slots = [
-    Slot.SOCK,
-    Slot.SHOE,
-    Slot.BOTTOM,
-    Slot.TOP,
-    Slot.DRESS,
-    Slot.OUTERWEAR,
-    Slot.ACCESSORY,
-  ];
+  import {
+    backgroundOption,
+    hairOption,
+    faceOption,
+    topOption,
+    sockOption,
+    shoeOption,
+    outerwearOption,
+    dressOption,
+    bottomOption,
+    accessoryOptions,
+  } from "../../stores/optionsStore";
 
   // Lol
   const images: Record<string, any> = import.meta.glob("/src/assets/base.png", {
@@ -30,12 +31,22 @@
       background / old_offwhite
       nothing else (no socks/accessory/etc)
   -->
-  <CanvasElement slot={Slot.BACKGROUND} zIndex={0} />
-  <CanvasElement slot={Slot.HAIR} zIndex={1} />
-  <CanvasElement slot={Slot.FACE} zIndex={2} />
+  <CanvasElement option={$backgroundOption} zIndex={0} />
+  <CanvasElement option={$hairOption} zIndex={1} />
+  <CanvasElement option={$faceOption} zIndex={2} />
+
+  <!-- Base image layer -->
   <CanvasElementBase imageUrl={baseImage} zIndex={3} />
-  {#each slots as slot, index}
-    <CanvasElement {slot} zIndex={index + 3} />
+
+  <CanvasElement option={$sockOption} zIndex={4} />
+  <CanvasElement option={$shoeOption} zIndex={5} />
+  <CanvasElement option={$bottomOption} zIndex={6} />
+  <CanvasElement option={$topOption} zIndex={7} />
+  <CanvasElement option={$dressOption} zIndex={8} />
+  <CanvasElement option={$outerwearOption} zIndex={9} />
+
+  {#each Array.from($accessoryOptions) as accessory, i}
+    <CanvasElement option={accessory} zIndex={10 + i} />
   {/each}
 </div>
 
