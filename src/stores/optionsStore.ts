@@ -32,12 +32,21 @@ export const backgroundOption = writable<Option>(DEFAULT_BACKGROUND);
 // WOW
 export const accessoryOptions = writable<Set<Option>>(new Set());
 
+// Seed default items
+const initialViewedNewOptions = loadSet(VIEWED_NEW_OPTIONS_STORAGE_KEY);
+
+initialViewedNewOptions.add(DEFAULT_HAIR.name);
+initialViewedNewOptions.add(DEFAULT_FACE.name);
+initialViewedNewOptions.add(DEFAULT_TOP.name);
+initialViewedNewOptions.add(DEFAULT_BOTTOM.name);
+initialViewedNewOptions.add(DEFAULT_BACKGROUND.name);
+
 export const viewedNewOptions = createPersistentSetStore(
   VIEWED_NEW_OPTIONS_STORAGE_KEY,
-  loadSet(VIEWED_NEW_OPTIONS_STORAGE_KEY),
+  initialViewedNewOptions,
 );
 
-export function markNewOptionViewed(option: Option) {
+export function markOptionViewed(option: Option) {
   viewedNewOptions.update((set) => {
     set.add(option.name);
     return set;
