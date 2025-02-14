@@ -68,8 +68,8 @@ export const TOP_OPTIONS: Option[] = [
       hint: "home",
       location: {
         locationText: "buddychive, in michigan",
-        locationUrl: "https://www.instagram.com/p/DEd-cTrpbHa"
-      }
+        locationUrl: "https://www.instagram.com/p/DEd-cTrpbHa",
+      },
     },
   },
   {
@@ -78,13 +78,14 @@ export const TOP_OPTIONS: Option[] = [
     slot: Slot.TOP,
     puzzle: {
       id: "blackwhitetankPuzzle",
-      prompt: "when autumn comes i'm not yet done / november joy, ar-chives of fun",
+      prompt:
+        "when autumn comes i'm not yet done / november joy, ar-chives of fun",
       password: "snuggle",
       hint: "hug",
       location: {
         locationText: "buddychive, maximum-carousel autumn",
-        locationUrl: "https://open.spotify.com/playlist/0tY6CARSOnte9He43kdIQr"
-      }
+        locationUrl: "https://open.spotify.com/playlist/0tY6CARSOnte9He43kdIQr",
+      },
     },
   },
   {
@@ -93,13 +94,14 @@ export const TOP_OPTIONS: Option[] = [
     slot: Slot.TOP,
     puzzle: {
       id: "denimtankPuzzle",
-      prompt: "ann arbor's an expensive flight / at least it's cheaper on my site",
+      prompt:
+        "ann arbor's an expensive flight / at least it's cheaper on my site",
       password: "seattle",
       hint: "city",
       location: {
         locationText: "my website, under michigan",
-        locationUrl: "https://www.aceschen.com/"
-      }
+        locationUrl: "https://www.aceschen.com/",
+      },
     },
   },
   {
@@ -108,13 +110,14 @@ export const TOP_OPTIONS: Option[] = [
     slot: Slot.TOP,
     puzzle: {
       id: "myhoodiePuzzle",
-      prompt: "my hand in yours the whole night long / we'll dance together to these songs",
+      prompt:
+        "my hand in yours the whole night long / we'll dance together to these songs",
       password: "waltz",
       hint: "dance",
       location: {
         locationText: "our wedding playlist",
-        locationUrl: "https://open.spotify.com/playlist/0tY6CARSOnte9He43kdIQr"
-      }
+        locationUrl: "https://open.spotify.com/playlist/0tY6CARSOnte9He43kdIQr",
+      },
     },
   },
   {
@@ -128,8 +131,9 @@ export const TOP_OPTIONS: Option[] = [
       hint: "soup",
       location: {
         locationText: "anicedaytoday, chazuke",
-        locationUrl: "https://www.instagram.com/p/DDVRt5VzcLTB2lNN7VCkuqilpf7vLCmkDbiI200"
-      }
+        locationUrl:
+          "https://www.instagram.com/p/DDVRt5VzcLTB2lNN7VCkuqilpf7vLCmkDbiI200",
+      },
     },
   },
   {
