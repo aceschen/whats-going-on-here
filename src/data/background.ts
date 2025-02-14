@@ -56,50 +56,60 @@ export const BACKGROUND_OPTIONS: Option[] = [
     name: "arts",
     asset: "arts.png",
     slot: Slot.BACKGROUND,
+    new: true
   },
   {
     name: "bedsheet",
     asset: "bedsheet.png",
     slot: Slot.BACKGROUND,
+    new: true
   },
   {
     name: "dinos",
     asset: "dinos.png",
     slot: Slot.BACKGROUND,
+    new: true
   },
   {
     name: "dough",
     asset: "dough.png",
     slot: Slot.BACKGROUND,
+    new: true
   },
   {
     name: "grass",
     asset: "grass.png",
     slot: Slot.BACKGROUND,
+    new: true
   },
   {
     name: "night",
     asset: "night.png",
     slot: Slot.BACKGROUND,
+    new: true
   },
   {
     name: "notebook",
     asset: "notebook.png",
     slot: Slot.BACKGROUND,
+    new: true
   },
   {
     name: "outside",
     asset: "outside.png",
     slot: Slot.BACKGROUND,
+    new: true
   },
   {
     name: "snake",
     asset: "snake.png",
     slot: Slot.BACKGROUND,
+    new: true
   },
   {
     name: "tanghulu",
     asset: "tanghulu.png",
     slot: Slot.BACKGROUND,
+    new: true
   },
 ];

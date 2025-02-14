@@ -6,26 +6,31 @@ export const DRESS_OPTIONS: Option[] = [
     name: "grad",
     asset: "grad.png",
     slot: Slot.DRESS,
+    new: true,
   },
   {
     name: "holey",
     asset: "holey.png",
     slot: Slot.DRESS,
+    new: true,
   },
   {
     name: "kiraku",
     asset: "kiraku.png",
     slot: Slot.DRESS,
+    new: true,
   },
   {
     name: "strawberry",
     asset: "strawberry.png",
     slot: Slot.DRESS,
+    new: true,
   },
   {
     name: "clue_bakerbeach",
     asset: "clue_bakerbeach.png",
     slot: Slot.DRESS,
+    new: true,
     puzzle: {
       id: "bakerbeachPuzzle",
       prompt:
@@ -42,6 +47,7 @@ export const DRESS_OPTIONS: Option[] = [
     name: "clue_howtovenusoverall",
     asset: "clue_howtovenusoverall.png",
     slot: Slot.DRESS,
+    new: true,
     puzzle: {
       id: "htvPuzzle",
       prompt:
@@ -58,6 +64,7 @@ export const DRESS_OPTIONS: Option[] = [
     name: "clue_porcelaincatdress",
     asset: "clue_porcelaincatdress.png",
     slot: Slot.DRESS,
+    new: true,
     puzzle: {
       id: "porcelaindressPuzzle",
       prompt:
@@ -75,6 +82,7 @@ export const DRESS_OPTIONS: Option[] = [
     name: "clue_renfaire",
     asset: "clue_renfaire.png",
     slot: Slot.DRESS,
+    new: true,
     puzzle: {
       id: "renfairePuzzle",
       prompt:

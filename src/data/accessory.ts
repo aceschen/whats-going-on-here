@@ -6,71 +6,85 @@ export const ACCESSORY_OPTIONS: Option[] = [
     name: "chazubead",
     asset: "chazubead.png",
     slot: Slot.ACCESSORY,
+    new: true,
   },
   {
     name: "chocobear",
     asset: "chocobear.png",
     slot: Slot.ACCESSORY,
+    new: true,
   },
   {
     name: "glasses",
     asset: "glasses.png",
     slot: Slot.ACCESSORY,
+    new: true,
   },
   {
     name: "jadeegg",
     asset: "jadeegg.png",
     slot: Slot.ACCESSORY,
+    new: true,
   },
   {
     name: "paintbrush",
     asset: "paintbrush.png",
     slot: Slot.ACCESSORY,
+    new: true,
   },
   {
     name: "partyhat",
     asset: "partyhat.png",
     slot: Slot.ACCESSORY,
+    new: true,
   },
   {
     name: "sardine",
     asset: "sardine.png",
     slot: Slot.ACCESSORY,
+    new: true,
   },
   {
     name: "tulips",
     asset: "tulips.png",
     slot: Slot.ACCESSORY,
+    new: true,
   },
   {
     name: "workbag",
     asset: "workbag.png",
     slot: Slot.ACCESSORY,
+    new: true,
   },
   {
     name: "scrunchieblue",
     asset: "scrunchieblue.png",
     slot: Slot.ACCESSORY,
+    new: true,
   },
   {
     name: "scrunchiepink",
     asset: "scrunchiepink.png",
     slot: Slot.ACCESSORY,
+    new: true,
   },
   {
     name: "scrunchieplaid",
     asset: "scrunchieplaid.png",
     slot: Slot.ACCESSORY,
+    new: true,
   },
   {
     name: "scrunchiewhite",
     asset: "scrunchiewhite.png",
     slot: Slot.ACCESSORY,
+    new: true,
   },
   {
     name: "clue_bluecrossbody",
     asset: "clue_bluecrossbody.png",
     slot: Slot.ACCESSORY,
+    new: true,
     puzzle: {
       id: "bluecrossbodyPuzzle",
       prompt:
@@ -87,6 +101,7 @@ export const ACCESSORY_OPTIONS: Option[] = [
     name: "clue_creamsoda",
     asset: "clue_creamsoda.png",
     slot: Slot.ACCESSORY,
+    new: true,
     puzzle: {
       id: "creamsodaPuzzle",
       prompt:
@@ -103,6 +118,7 @@ export const ACCESSORY_OPTIONS: Option[] = [
     name: "clue_jadestar",
     asset: "clue_jadestar.png",
     slot: Slot.ACCESSORY,
+    new: true,
     puzzle: {
       id: "jadestarPuzzle",
       prompt:

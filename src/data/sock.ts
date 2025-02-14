@@ -6,26 +6,31 @@ export const SOCK_OPTIONS: Option[] = [
     name: "black",
     asset: "black.png",
     slot: Slot.SOCK,
+    new: true,
   },
   {
     name: "merino",
     asset: "merino.png",
     slot: Slot.SOCK,
+    new: true,
   },
   {
     name: "pattern",
     asset: "pattern.png",
     slot: Slot.SOCK,
+    new: true,
   },
   {
     name: "white",
     asset: "white.png",
     slot: Slot.SOCK,
+    new: true,
   },
   {
     name: "clue_hellokitty",
     asset: "clue_hellokitty.png",
     slot: Slot.SOCK,
+    new: true,
     puzzle: {
       id: "hellokittyPuzzle",
       prompt:
@@ -42,6 +47,7 @@ export const SOCK_OPTIONS: Option[] = [
     name: "clue_red",
     asset: "clue_red.png",
     slot: Slot.SOCK,
+    new: true,
     puzzle: {
       id: "redsockPuzzle",
       prompt:

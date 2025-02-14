@@ -11,103 +11,67 @@ export const TOP_OPTIONS: Option[] = [
     name: "alwayslate",
     asset: "alwayslate.png",
     slot: Slot.TOP,
-  },
-  {
-    name: "bluepattern",
-    asset: "bluepattern.png",
-    slot: Slot.TOP,
-  },
-  {
-    name: "contraststitch",
-    asset: "contraststitch.png",
-    slot: Slot.TOP,
-  },
-  {
-    name: "creamhoodie",
-    asset: "creamhoodie.png",
-    slot: Slot.TOP,
-  },
-  {
-    name: "ginghamtank",
-    asset: "ginghamtank.png",
-    slot: Slot.TOP,
-  },
-  {
-    name: "greencardigan",
-    asset: "greencardigan.png",
-    slot: Slot.TOP,
+    new: true,
   },
   {
     name: "greenribbontank",
     asset: "greenribbontank.png",
     slot: Slot.TOP,
+    new: true,
   },
   {
-    name: "kayla",
-    asset: "kayla.png",
+    name: "ginghamtank",
+    asset: "ginghamtank.png",
     slot: Slot.TOP,
+    new: true,
   },
   {
-    name: "peow",
-    asset: "peow.png",
+    name: "bluepattern",
+    asset: "bluepattern.png",
     slot: Slot.TOP,
+    new: true,
+  },
+  {
+    name: "contraststitch",
+    asset: "contraststitch.png",
+    slot: Slot.TOP,
+    new: true,
+  },
+  {
+    name: "greencardigan",
+    asset: "greencardigan.png",
+    slot: Slot.TOP,
+    new: true,
   },
   {
     name: "blackcashmere",
     asset: "blackcashmere.png",
     slot: Slot.TOP,
+    new: true,
   },
   {
-    name: "clue_alwaysbesideyou",
-    asset: "clue_alwaysbesideyou.png",
+    name: "kayla",
+    asset: "kayla.png",
     slot: Slot.TOP,
-    puzzle: {
-      id: "alwaysbesideyouPuzzle",
-      prompt: "so recently i thought i saw / three buddies inside bonbonbon",
-      password: "auckland",
-      hint: "home",
-      location: {
-        locationText: "buddychive, in michigan",
-        locationUrl: "https://www.instagram.com/p/DEd-cTrpbHa",
-      },
-    },
+    new: true,
   },
   {
-    name: "clue_blackwhitetank",
-    asset: "clue_blackwhitetank.png",
+    name: "peow",
+    asset: "peow.png",
     slot: Slot.TOP,
-    puzzle: {
-      id: "blackwhitetankPuzzle",
-      prompt:
-        "when autumn comes i'm not yet done / november joy, ar-chives of fun",
-      password: "snuggle",
-      hint: "hug",
-      location: {
-        locationText: "buddychive, maximum-carousel autumn",
-        locationUrl: "https://open.spotify.com/playlist/0tY6CARSOnte9He43kdIQr",
-      },
-    },
+    new: true,
   },
   {
-    name: "clue_denimtank",
-    asset: "clue_denimtank.png",
+    name: "creamhoodie",
+    asset: "creamhoodie.png",
     slot: Slot.TOP,
-    puzzle: {
-      id: "denimtankPuzzle",
-      prompt:
-        "ann arbor's an expensive flight / at least it's cheaper on my site",
-      password: "seattle",
-      hint: "city",
-      location: {
-        locationText: "my website, under michigan",
-        locationUrl: "https://www.aceschen.com/",
-      },
-    },
+    new: true,
   },
   {
     name: "clue_myhoodie",
     asset: "clue_myhoodie.png",
     slot: Slot.TOP,
+    new: true,
     puzzle: {
       id: "myhoodiePuzzle",
       prompt:
@@ -124,6 +88,7 @@ export const TOP_OPTIONS: Option[] = [
     name: "clue_poppy",
     asset: "clue_poppy.png",
     slot: Slot.TOP,
+    new: true,
     puzzle: {
       id: "poppyPuzzle",
       prompt: "for chazuke, the o's polite / i guess tday is nice alright",
@@ -137,23 +102,58 @@ export const TOP_OPTIONS: Option[] = [
     },
   },
   {
+    name: "clue_alwaysbesideyou",
+    asset: "clue_alwaysbesideyou.png",
+    slot: Slot.TOP,
+    new: true,
+    puzzle: {
+      id: "alwaysbesideyouPuzzle",
+      prompt: "so recently i thought i saw / three buddies inside bonbonbon",
+      password: "auckland",
+      hint: "home",
+      location: {
+        locationText: "buddychive, in michigan",
+        locationUrl: "https://www.instagram.com/p/DEd-cTrpbHa",
+      },
+    },
+  },
+  {
+    name: "clue_blackwhitetank",
+    asset: "clue_blackwhitetank.png",
+    slot: Slot.TOP,
+    new: true,
+    puzzle: {
+      id: "blackwhitetankPuzzle",
+      prompt:
+        "when autumn comes i'm not yet done / november joy, ar-chives of fun",
+      password: "snuggle",
+      hint: "hug",
+      location: {
+        locationText: "buddychive, maximum-carousel autumn",
+        locationUrl: "https://open.spotify.com/playlist/0tY6CARSOnte9He43kdIQr",
+      },
+    },
+  },
+  {
+    name: "clue_denimtank",
+    asset: "clue_denimtank.png",
+    slot: Slot.TOP,
+    new: true,
+    puzzle: {
+      id: "denimtankPuzzle",
+      prompt:
+        "ann arbor's an expensive flight / at least it's cheaper on my site",
+      password: "seattle",
+      hint: "city",
+      location: {
+        locationText: "my website, under michigan",
+        locationUrl: "https://www.aceschen.com/",
+      },
+    },
+  },
+  {
     name: "old_bluetank",
     asset: "old_bluetank.png",
-    slot: Slot.TOP,
-  },
-  {
-    name: "old_burntoffering",
-    asset: "old_burntoffering.png",
-    slot: Slot.TOP,
-  },
-  {
-    name: "old_carmicoblue",
-    asset: "old_carmicoblue.png",
-    slot: Slot.TOP,
-  },
-  {
-    name: "old_carmicowhite",
-    asset: "old_carmicowhite.png",
     slot: Slot.TOP,
   },
   {
@@ -172,8 +172,23 @@ export const TOP_OPTIONS: Option[] = [
     slot: Slot.TOP,
   },
   {
-    name: "old_moon",
-    asset: "old_moon.png",
+    name: "old_rosetop",
+    asset: "old_rosetop.png",
+    slot: Slot.TOP,
+  },
+  {
+    name: "old_burntoffering",
+    asset: "old_burntoffering.png",
+    slot: Slot.TOP,
+  },
+  {
+    name: "old_carmicoblue",
+    asset: "old_carmicoblue.png",
+    slot: Slot.TOP,
+  },
+  {
+    name: "old_carmicowhite",
+    asset: "old_carmicowhite.png",
     slot: Slot.TOP,
   },
   {
@@ -187,8 +202,8 @@ export const TOP_OPTIONS: Option[] = [
     slot: Slot.TOP,
   },
   {
-    name: "old_rosetop",
-    asset: "old_rosetop.png",
+    name: "old_moon",
+    asset: "old_moon.png",
     slot: Slot.TOP,
   },
 ];

@@ -8,29 +8,34 @@ export const BOTTOM_OPTIONS: Option[] = [
     slot: Slot.BOTTOM,
   },
   {
+    name: "heartshorts",
+    asset: "heartshorts.png",
+    slot: Slot.BOTTOM,
+    new: true,
+  },
+  {
     name: "cargojean",
     asset: "cargojean.png",
     slot: Slot.BOTTOM,
+    new: true,
   },
   {
     name: "grayjean",
     asset: "grayjean.png",
     slot: Slot.BOTTOM,
-  },
-  {
-    name: "heartshorts",
-    asset: "heartshorts.png",
-    slot: Slot.BOTTOM,
+    new: true,
   },
   {
     name: "mujipants",
     asset: "mujipants.png",
     slot: Slot.BOTTOM,
+    new: true,
   },
   {
     name: "clue_creampuff",
     asset: "clue_creampuff.png",
     slot: Slot.BOTTOM,
+    new: true,
     puzzle: {
       id: "creampuffPuzzle",
       prompt: "a secret letter you can hear / is in my playlists now, my dear",
@@ -46,6 +51,7 @@ export const BOTTOM_OPTIONS: Option[] = [
     name: "clue_pearledskirt",
     asset: "clue_pearledskirt.png",
     slot: Slot.BOTTOM,
+    new: true,
     puzzle: {
       id: "pearledPuzzle",
       prompt:
@@ -62,6 +68,7 @@ export const BOTTOM_OPTIONS: Option[] = [
     name: "clue_sweatpants",
     asset: "clue_sweatpants.png",
     slot: Slot.BOTTOM,
+    new: true,
     puzzle: {
       id: "sweatpantsPuzzle",
       prompt:

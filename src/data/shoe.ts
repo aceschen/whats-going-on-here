@@ -6,21 +6,25 @@ export const SHOE_OPTIONS: Option[] = [
     name: "docs",
     asset: "docs.png",
     slot: Slot.SHOE,
+    new: true,
   },
   {
     name: "horseboots",
     asset: "horseboots.png",
     slot: Slot.SHOE,
+    new: true,
   },
   {
     name: "redboot",
     asset: "redboot.png",
     slot: Slot.SHOE,
+    new: true,
   },
   {
     name: "clue_catslipper",
     asset: "clue_catslipper.png",
     slot: Slot.SHOE,
+    new: true,
     puzzle: {
       id: "catslipperPuzzle",
       prompt:

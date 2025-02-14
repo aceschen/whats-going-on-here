@@ -6,21 +6,25 @@ export const OUTERWEAR_OPTIONS: Option[] = [
     name: "animegirl",
     asset: "animegirl.png",
     slot: Slot.OUTERWEAR,
+    new: true,
   },
   {
     name: "blueembroidery",
     asset: "blueembroidery.png",
     slot: Slot.OUTERWEAR,
+    new: true,
   },
   {
     name: "horsepattern",
     asset: "horsepattern.png",
     slot: Slot.OUTERWEAR,
+    new: true,
   },
   {
     name: "clue_leather",
     asset: "clue_leather.png",
     slot: Slot.OUTERWEAR,
+    new: true,
     puzzle: {
       id: "leatherPuzzle",
       prompt:

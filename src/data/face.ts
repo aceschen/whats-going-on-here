@@ -26,5 +26,6 @@ export const FACE_OPTIONS: Option[] = [
     name: "sideye",
     asset: "sideye.png",
     slot: Slot.FACE,
+    new: true
   },
 ];
