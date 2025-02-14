@@ -1,13 +1,15 @@
-import { writable, type Writable } from "svelte/store";
+import { derived, writable, type Writable } from "svelte/store";
 import type { Option } from "../types/option";
 import { Slot } from "../types/slot";
 import type { Category } from "../types/category";
-import { CATEGORIES } from "../data/category";
 import { BACKGROUND_OPTIONS } from "../data/background";
 import { TOP_OPTIONS } from "../data/top";
 import { FACE_OPTIONS } from "../data/face";
 import { HAIR_OPTIONS } from "../data/hair";
 import { BOTTOM_OPTIONS } from "../data/bottom";
+import { createPersistentSetStore, loadSet } from "../util/storageUtil";
+
+const VIEWED_NEW_OPTIONS_STORAGE_KEY = "VIEWED_NEW_OPTIONS_SET";
 
 const DEFAULT_FACE = FACE_OPTIONS[0];
 const DEFAULT_HAIR = HAIR_OPTIONS[0];
@@ -29,6 +31,28 @@ export const backgroundOption = writable<Option>(DEFAULT_BACKGROUND);
 
 // WOW
 export const accessoryOptions = writable<Set<Option>>(new Set());
+
+export const viewedNewOptions = createPersistentSetStore(
+  VIEWED_NEW_OPTIONS_STORAGE_KEY,
+  loadSet(VIEWED_NEW_OPTIONS_STORAGE_KEY),
+);
+
+export function markNewOptionViewed(option: Option) {
+  viewedNewOptions.update((set) => {
+    set.add(option.name);
+    return set;
+  });
+}
+
+export const isOptionViewed = derived(
+  viewedNewOptions,
+  ($viewedNewOptions) => {
+    return (option: Option): boolean => {
+      if (!option.new) return true;
+      return $viewedNewOptions.has(option.name);
+    };
+  },
+);
 
 function setStateBySlot(option: Option, slot: Slot) {
   switch (slot) {

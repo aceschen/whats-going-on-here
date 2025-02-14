@@ -11,6 +11,7 @@ import { FACE_OPTIONS } from "../data/face";
 import { DRESS_OPTIONS } from "../data/dress";
 import { BOTTOM_OPTIONS } from "../data/bottom";
 import { BACKGROUND_OPTIONS } from "../data/background";
+import { createPersistentSetStore, loadSet } from "../util/storageUtil";
 
 export const currentPuzzle = writable<Puzzle | undefined>(undefined);
 // Hack, since Puzzle has no knowledge of its parent
@@ -19,24 +20,6 @@ export const currentAssociatedOption = writable<Option | undefined>(undefined);
 const SOLVED_PUZZLES_STORAGE_KEY = "SOLVED_PUZZLE_SET";
 const ACTIVATED_HINTS_STORAGE_KEY = "ACTIVATED_HINT_SET";
 const ACTIVATED_LOCATIONS_STORAGE_KEY = "ACTIVATED_LOCATION_SET";
-
-function loadSet(storageKey: string): Set<string> {
-  const storedValue = localStorage.getItem(storageKey);
-  return storedValue
-    ? new Set<string>(JSON.parse(storedValue))
-    : new Set<string>();
-}
-
-function createPersistentSetStore(
-  storageKey: string,
-  initialValue: Set<string>,
-) {
-  const store = writable<Set<string>>(initialValue);
-  store.subscribe((value) => {
-    localStorage.setItem(storageKey, JSON.stringify(Array.from(value)));
-  });
-  return store;
-}
 
 const ALL_PUZZLES = (() => {
   // Probably should have just used actual objects for everything and created an initializer. Too late now
