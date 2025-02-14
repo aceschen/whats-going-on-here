@@ -10,10 +10,19 @@
   import CompletedModal from "./lib/modal/CompletedModal.svelte";
 
   let isAuthenticated = false;
+  // It actually just makes sense to preload everything immediately
+  // So the everything really was a bad idea
+  const images = import.meta.glob('/src/assets/*/*.png', { eager: true });
 
   onMount(() => {
     isAuthenticated = localStorage.getItem("isAuthenticated") === "true";
-  });
+
+    Object.values(images).forEach((module: any) => {
+      const url = module.default || module;
+      const img = new Image();
+      img.src = url;
+    });
+  })
 
   function handleAuthentication() {
     isAuthenticated = true;
