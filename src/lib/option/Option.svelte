@@ -24,7 +24,7 @@
   $: lockedImageUrl = resolveIconImageByName("icon_heart.png");
   $: isUnlocked = $isPuzzleSolved(option.puzzle);
 
-  $: imageStyle = getImageStyle(option.slot);
+  $: imageStyle = getImageStyle(option);
 
   // roflcopter
   $: nonAccessoryStore =

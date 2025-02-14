@@ -77,7 +77,16 @@ export function resolveImage(option: Option | undefined): string {
   return images ? resolveFromImages(images, option.asset) : "";
 }
 
-export function getImageStyle(slot: Slot): {
+export function getImageStyle(option: Option) {
+  switch (option.name) {
+    case 'old_tinyshort':
+      return { backgroundSize: "190%", backgroundPositionY: "70%" };
+    default: 
+      return getImageSlotStyle(option.slot);
+  }
+}
+
+function getImageSlotStyle(slot: Slot): {
   backgroundSize: string;
   backgroundPositionY: string;
 } {
