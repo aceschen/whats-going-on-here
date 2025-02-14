@@ -16,6 +16,7 @@ import { createPersistentSetStore, loadSet } from "../util/storageUtil";
 export const currentPuzzle = writable<Puzzle | undefined>(undefined);
 // Hack, since Puzzle has no knowledge of its parent
 export const currentAssociatedOption = writable<Option | undefined>(undefined);
+export const showCompletedModal = writable<boolean>(false);
 
 const SOLVED_PUZZLES_STORAGE_KEY = "SOLVED_PUZZLE_SET";
 const ACTIVATED_HINTS_STORAGE_KEY = "ACTIVATED_HINT_SET";

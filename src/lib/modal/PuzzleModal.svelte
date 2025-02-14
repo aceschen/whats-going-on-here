@@ -4,6 +4,7 @@
     setAccessoryOption,
   } from "../../stores/optionsStore";
   import {
+  areAllPuzzlesSolved,
     currentAssociatedOption,
     currentPuzzle,
     isHintActivated,
@@ -11,6 +12,7 @@
     markHintActivated,
     markLocationActivated,
     markPuzzleSolved,
+    showCompletedModal,
   } from "../../stores/puzzleStore";
   import { Slot } from "../../types/slot";
   import ModalBase from "./ModalBase.svelte";
@@ -27,6 +29,11 @@
   function checkPassword() {
     if (enteredPassword === $currentPuzzle?.password) {
       markPuzzleSolved($currentPuzzle!);
+      if ($areAllPuzzlesSolved) {
+        console.log("Done");
+        showCompletedModal.set(true);
+      }
+
       const option = $currentAssociatedOption!;
       if (option.slot === Slot.ACCESSORY) {
         setAccessoryOption(option);

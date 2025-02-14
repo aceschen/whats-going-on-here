@@ -1,23 +1,16 @@
 <script lang="ts">
   import { createEventDispatcher } from "svelte";
-  export let onclose: () => void = () => {};
-
-  const dispatch = createEventDispatcher();
-
-  function handleClose() {
-    dispatch("close");
-    onclose();
-  }
+  export let onclose: () => void;
 
   function handleOverlayClick(event: MouseEvent) {
     if (event.currentTarget === event.target) {
-      handleClose();
+      onclose();
     }
   }
 
   function handleOverlayKeydown(event: KeyboardEvent) {
     if (event.key === "Escape") {
-      handleClose();
+      onclose();
     }
   }
 </script>
@@ -32,7 +25,7 @@
   <div class="modal">
     <button
       class="close-button"
-      on:click={handleClose}
+      on:click={onclose}
       aria-label="Close dialog"
     >
       X

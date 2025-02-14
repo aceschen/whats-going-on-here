@@ -7,6 +7,7 @@
   import PuzzleModal from "./lib/modal/PuzzleModal.svelte";
   import { selectedCategory } from "./stores/optionsStore";
   import Home from "./lib/Home.svelte";
+  import CompletedModal from "./lib/modal/CompletedModal.svelte";
 
   let isAuthenticated = false;
 
@@ -30,6 +31,7 @@
       {/if}
     </container>
     <PuzzleModal />
+    <CompletedModal />
     <CategoryPanel />
   {:else}
     <PasswordPrompt onAuthenticated={handleAuthentication} />
