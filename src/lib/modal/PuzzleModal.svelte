@@ -13,6 +13,7 @@
     markPuzzleSolved,
   } from "../../stores/puzzleStore";
   import { Slot } from "../../types/slot";
+  import ModalBase from "./ModalBase.svelte";
 
   let enteredPassword = "";
   let submitText = "submit";
@@ -47,18 +48,6 @@
     markLocationActivated($currentPuzzle!);
   }
 
-  function onOverlayClick(event: MouseEvent) {
-    if (event.currentTarget === event.target) {
-      closeModal();
-    }
-  }
-
-  function onOverlayKeydown(event: KeyboardEvent) {
-    if (event.key === "Escape") {
-      closeModal();
-    }
-  }
-
   function onPasswordKeydown(event: KeyboardEvent) {
     if (event.key === "Enter") {
       checkPassword();
@@ -73,99 +62,46 @@
 </script>
 
 {#if $currentPuzzle}
-  <div
-    class="modal-overlay"
-    role="button"
-    tabindex="0"
-    on:click={onOverlayClick}
-    on:keydown={onOverlayKeydown}
-  >
-    <div class="modal">
-      <button
-        class="close-button"
-        on:click={closeModal}
-        aria-label="Close dialog"
-      >
-        X
-      </button>
+  <ModalBase onclose={closeModal}>
+    <h2>{$currentPuzzle.prompt}</h2>
 
-      <h2>{$currentPuzzle.prompt}</h2>
-
-      {#if $currentPuzzle.location}
-        {#if $isLocationActivated($currentPuzzle)}
-          <a href={$currentPuzzle.location.locationUrl} target="_blank"
-            >puzzle location: {$currentPuzzle.location.locationText}</a
-          >
-        {:else}
-          <button class="hint-button" on:click={onShowLocationClick}>
-            show puzzle location
-          </button>
-        {/if}
-      {/if}{#if $currentPuzzle.hint}
-        {#if $isHintActivated($currentPuzzle)}
-          <p class="hint">definition: {$currentPuzzle.hint}</p>
-        {:else}
-          <button class="hint-button" on:click={onShowHintClick}>
-            show puzzle hint
-          </button>
-        {/if}
-      {/if}
-
-      <div class="submit-answer">
-        <input
-          class="answer-input"
-          bind:value={enteredPassword}
-          placeholder="puzzle answer"
-          on:keydown={onPasswordKeydown}
-        />
-        <button class="submit-button" on:click={onPasswordClick}>
-          {submitText}
+    {#if $currentPuzzle.location}
+      {#if $isLocationActivated($currentPuzzle)}
+        <a href={$currentPuzzle.location.locationUrl} target="_blank">
+          puzzle location: {$currentPuzzle.location.locationText}
+        </a>
+      {:else}
+        <button class="hint-button" on:click={onShowLocationClick}>
+          show puzzle location
         </button>
-      </div>
+      {/if}
+    {/if}
+
+    {#if $currentPuzzle.hint}
+      {#if $isHintActivated($currentPuzzle)}
+        <p class="hint">definition: {$currentPuzzle.hint}</p>
+      {:else}
+        <button class="hint-button" on:click={onShowHintClick}>
+          show puzzle hint
+        </button>
+      {/if}
+    {/if}
+
+    <div class="submit-answer">
+      <input
+        class="answer-input"
+        bind:value={enteredPassword}
+        placeholder="puzzle answer"
+        on:keydown={onPasswordKeydown}
+      />
+      <button class="submit-button" on:click={onPasswordClick}>
+        {submitText}
+      </button>
     </div>
-  </div>
+  </ModalBase>
 {/if}
 
 <style>
-  .modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 999;
-    outline: none;
-    text-align: left;
-  }
-
-  .modal {
-    align-items: left;
-    justify-content: left;
-    position: relative;
-    background: white;
-    color: black;
-    padding: 2rem;
-    border-radius: 8px;
-    max-width: 400px;
-    width: 90%;
-    border: solid var(--red-accent) 0.8rem;
-  }
-
-  .close-button {
-    color: var(--red-accent);
-    position: absolute;
-    top: 1rem;
-    right: 1.5rem;
-    background: transparent;
-    border: none;
-    font-size: 1.25rem;
-    cursor: pointer;
-  }
-
   .hint {
     font-style: italic;
     margin: 1rem 0;
