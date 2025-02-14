@@ -4,7 +4,7 @@
     setAccessoryOption,
   } from "../../stores/optionsStore";
   import {
-  areAllPuzzlesSolved,
+    areAllPuzzlesSolved,
     currentAssociatedOption,
     currentPuzzle,
     isHintActivated,

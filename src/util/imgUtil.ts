@@ -86,9 +86,9 @@ export function resolveBaseImage() {
 
 export function getImageStyle(option: Option) {
   switch (option.name) {
-    case 'old_tinyshort':
+    case "old_tinyshort":
       return { backgroundSize: "190%", backgroundPositionY: "70%" };
-    default: 
+    default:
       return getImageSlotStyle(option.slot);
   }
 }

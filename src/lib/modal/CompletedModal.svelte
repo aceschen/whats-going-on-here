@@ -1,16 +1,10 @@
 <script lang="ts">
-  import {
-    selectedCategory,
-  } from "../../stores/optionsStore";
-  import {
-    currentPuzzle,
-    showCompletedModal,
-  } from "../../stores/puzzleStore";
+  import { selectedCategory } from "../../stores/optionsStore";
+  import { currentPuzzle, showCompletedModal } from "../../stores/puzzleStore";
   import { Slot } from "../../types/slot";
   import ModalBase from "./ModalBase.svelte";
 
   function closeModal() {
-    
     currentPuzzle.set(undefined);
   }
 
@@ -24,8 +18,7 @@
 {#if $showCompletedModal}
   <ModalBase onclose={closeModal}>
     <h2>You Win</h2>
-    <div class="go-home" on:click={goHome}>
-    </div>
+    <div class="go-home" on:click={goHome}></div>
   </ModalBase>
 {/if}
 

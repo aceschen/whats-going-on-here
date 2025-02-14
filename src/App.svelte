@@ -12,7 +12,7 @@
   let isAuthenticated = false;
   // It actually just makes sense to preload everything immediately
   // So the everything really was a bad idea
-  const images = import.meta.glob('/src/assets/*/*.png', { eager: true });
+  const images = import.meta.glob("/src/assets/*/*.png", { eager: true });
 
   onMount(() => {
     isAuthenticated = localStorage.getItem("isAuthenticated") === "true";
@@ -22,7 +22,7 @@
       const img = new Image();
       img.src = url;
     });
-  })
+  });
 
   function handleAuthentication() {
     isAuthenticated = true;

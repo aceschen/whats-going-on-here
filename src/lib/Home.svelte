@@ -1,7 +1,22 @@
 <script lang="ts">
   import { areAllPuzzlesSolved } from "../stores/puzzleStore";
-  import { exportCombinedImage, resolveBaseImage, resolveImage } from "../util/imgUtil";
-  import { backgroundOption, hairOption, faceOption, topOption, sockOption, shoeOption, outerwearOption, dressOption, bottomOption, accessoryOptions } from "../stores/optionsStore";
+  import {
+    exportCombinedImage,
+    resolveBaseImage,
+    resolveImage,
+  } from "../util/imgUtil";
+  import {
+    backgroundOption,
+    hairOption,
+    faceOption,
+    topOption,
+    sockOption,
+    shoeOption,
+    outerwearOption,
+    dressOption,
+    bottomOption,
+    accessoryOptions,
+  } from "../stores/optionsStore";
 
   function onDownloadClick() {
     const imagePaths = [
@@ -15,7 +30,9 @@
       resolveImage($topOption),
       resolveImage($dressOption),
       resolveImage($outerwearOption),
-      ...Array.from($accessoryOptions).map(accessory => resolveImage(accessory)),
+      ...Array.from($accessoryOptions).map((accessory) =>
+        resolveImage(accessory),
+      ),
     ];
     exportCombinedImage(imagePaths);
   }
@@ -24,9 +41,7 @@
 <div>
   {#if $areAllPuzzlesSolved}
     Finished
-    <div class="download-button" on:click={onDownloadClick}>
-
-    </div>
+    <div class="download-button" on:click={onDownloadClick}></div>
   {:else}
     Hello
   {/if}

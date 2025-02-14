@@ -23,11 +23,7 @@
   on:keydown={handleOverlayKeydown}
 >
   <div class="modal">
-    <button
-      class="close-button"
-      on:click={onclose}
-      aria-label="Close dialog"
-    >
+    <button class="close-button" on:click={onclose} aria-label="Close dialog">
       X
     </button>
     <slot />

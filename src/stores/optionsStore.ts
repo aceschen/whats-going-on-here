@@ -53,15 +53,12 @@ export function markOptionViewed(option: Option) {
   });
 }
 
-export const isOptionViewed = derived(
-  viewedNewOptions,
-  ($viewedNewOptions) => {
-    return (option: Option): boolean => {
-      if (!option.new) return true;
-      return $viewedNewOptions.has(option.name);
-    };
-  },
-);
+export const isOptionViewed = derived(viewedNewOptions, ($viewedNewOptions) => {
+  return (option: Option): boolean => {
+    if (!option.new) return true;
+    return $viewedNewOptions.has(option.name);
+  };
+});
 
 function setStateBySlot(option: Option, slot: Slot) {
   switch (slot) {

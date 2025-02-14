@@ -5,9 +5,7 @@
     setOptionState,
     unsetOptionState,
     isOptionViewed,
-
-    markOptionViewed
-
+    markOptionViewed,
   } from "../../stores/optionsStore";
   import type { Option } from "../../types/option";
   import {
