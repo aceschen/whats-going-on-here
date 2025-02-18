@@ -86,12 +86,12 @@ export const DRESS_OPTIONS: Option[] = [
     puzzle: {
       id: "renfairePuzzle",
       prompt:
-        "he's halfway round the world tonight / a friend that you last saw online",
+        "a friend abroad's from san jose / you click his name to lead the way / then read about his catholic school / with hidden language -- pretty cool!",
       password: "renaissance",
       hint: "rebirth",
       location: {
-        locationText: "henry's site",
-        locationUrl: "https://qwook.io/",
+        locationText: "henry's site, la san page, hover on text",
+        locationUrl: "https://qwook.io/blogs/lasan",
       },
     },
   },

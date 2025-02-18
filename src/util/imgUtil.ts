@@ -87,7 +87,10 @@ export function resolveBaseImage() {
 export function getImageStyle(option: Option) {
   switch (option.name) {
     case "old_tinyshort":
-      return { backgroundSize: "190%", backgroundPositionY: "70%" };
+    case "heartshorts":
+      return { backgroundSize: "300%", backgroundPositionY: "65%" };    
+    case "old_tennis":
+      return { backgroundSize: "250%", backgroundPositionY: "70%" };
     default:
       return getImageSlotStyle(option.slot);
   }
@@ -156,7 +159,7 @@ export async function exportCombinedImage(imagePaths: string[]): Promise<void> {
     const combinedImageUrl = await combineImages(imagePaths);
     const link = document.createElement("a");
     link.href = combinedImageUrl;
-    link.download = "ISABEL.png";
+    link.download = "buildabel.png";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

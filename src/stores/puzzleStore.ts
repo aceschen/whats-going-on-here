@@ -115,7 +115,8 @@ export const isLocationActivated = derived(
 export const areAllPuzzlesSolved = derived(solvedPuzzles, ($solvedPuzzles) => {
   // Assuming all puzzles are correctly set, it is a LOT faster to just check the size
   // In case we have some crazy bug.... allow having extra puzzles count as winning
-  console.log("Solved Puzzles Count: ", $solvedPuzzles.size);
-  console.log("Total Puzzles Count: ", UNIQUE_PUZZLE_COUNT);
+  // console.log("Solved Puzzles Count: ", $solvedPuzzles.size);
+  // console.log("Total Puzzles Count: ", UNIQUE_PUZZLE_COUNT);
   return $solvedPuzzles.size >= ALL_PUZZLES.size;
+  // return true;
 });

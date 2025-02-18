@@ -75,11 +75,11 @@
     {#if $currentPuzzle.location}
       {#if $isLocationActivated($currentPuzzle)}
         <a href={$currentPuzzle.location.locationUrl} target="_blank">
-          puzzle location: {$currentPuzzle.location.locationText}
+          clue location: {$currentPuzzle.location.locationText}
         </a>
       {:else}
         <button class="hint-button" on:click={onShowLocationClick}>
-          show puzzle location
+          reveal clue location
         </button>
       {/if}
     {/if}
@@ -89,7 +89,7 @@
         <p class="hint">definition: {$currentPuzzle.hint}</p>
       {:else}
         <button class="hint-button" on:click={onShowHintClick}>
-          show puzzle hint
+          reveal clue hint
         </button>
       {/if}
     {/if}
@@ -161,5 +161,13 @@
   a {
     text-decoration: underline;
     color: var(--red-accent);
+  }
+  
+  p {
+    color: #3d3d3d;
+  }
+  
+  h2 {
+    color: #3d3d3d;
   }
 </style>
