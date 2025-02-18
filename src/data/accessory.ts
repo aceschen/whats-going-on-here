@@ -2,15 +2,10 @@ import type { Option } from "../types/option";
 import { Slot } from "../types/slot";
 
 export const ACCESSORY_OPTIONS: Option[] = [
+  // NECK + FACE
   {
     name: "chazubead",
     asset: "chazubead.png",
-    slot: Slot.ACCESSORY,
-    new: true,
-  },
-  {
-    name: "chocobear",
-    asset: "chocobear.png",
     slot: Slot.ACCESSORY,
     new: true,
   },
@@ -27,12 +22,6 @@ export const ACCESSORY_OPTIONS: Option[] = [
     new: true,
   },
   {
-    name: "paintbrush",
-    asset: "paintbrush.png",
-    slot: Slot.ACCESSORY,
-    new: true,
-  },
-  {
     name: "partyhat",
     asset: "partyhat.png",
     slot: Slot.ACCESSORY,
@@ -44,15 +33,10 @@ export const ACCESSORY_OPTIONS: Option[] = [
     slot: Slot.ACCESSORY,
     new: true,
   },
+  // RIGHT HAND
   {
-    name: "tulips",
-    asset: "tulips.png",
-    slot: Slot.ACCESSORY,
-    new: true,
-  },
-  {
-    name: "workbag",
-    asset: "workbag.png",
+    name: "chocobear",
+    asset: "chocobear.png",
     slot: Slot.ACCESSORY,
     new: true,
   },
@@ -69,17 +53,37 @@ export const ACCESSORY_OPTIONS: Option[] = [
     new: true,
   },
   {
+    name: "scrunchiewhite",
+    asset: "scrunchiewhite.png",
+    slot: Slot.ACCESSORY,
+    new: true,
+  },
+  // LEFT HAND
+  {
     name: "scrunchieplaid",
     asset: "scrunchieplaid.png",
     slot: Slot.ACCESSORY,
     new: true,
   },
   {
-    name: "scrunchiewhite",
-    asset: "scrunchiewhite.png",
+    name: "paintbrush",
+    asset: "paintbrush.png",
     slot: Slot.ACCESSORY,
     new: true,
   },
+  {
+    name: "tulips",
+    asset: "tulips.png",
+    slot: Slot.ACCESSORY,
+    new: true,
+  },
+  {
+    name: "workbag",
+    asset: "workbag.png",
+    slot: Slot.ACCESSORY,
+    new: true,
+  },
+  // CLUES
   {
     name: "clue_bluecrossbody",
     asset: "clue_bluecrossbody.png",
@@ -147,13 +151,13 @@ export const ACCESSORY_OPTIONS: Option[] = [
     slot: Slot.ACCESSORY,
   },
   {
-    name: "old_dinonug",
-    asset: "old_dinonug.png",
+    name: "old_dirtnecklace",
+    asset: "old_dirtnecklace.png",
     slot: Slot.ACCESSORY,
   },
   {
-    name: "old_dirtnecklace",
-    asset: "old_dirtnecklace.png",
+    name: "old_dinonug",
+    asset: "old_dinonug.png",
     slot: Slot.ACCESSORY,
   },
   {

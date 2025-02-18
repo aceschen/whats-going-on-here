@@ -64,6 +64,7 @@
     style="
       background-image: url({optionImageUrl}); 
       background-size: {imageStyle.backgroundSize}; 
+      background-position-x: {imageStyle.backgroundPositionX};
       background-position-y: {imageStyle.backgroundPositionY};"
     on:click={selectUnlockedOption}
   >

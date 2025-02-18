@@ -86,11 +86,91 @@ export function resolveBaseImage() {
 
 export function getImageStyle(option: Option) {
   switch (option.name) {
+    // tops
+    case "old_coolsclub": 
+    case "alwayslate":
+    case "greenribbontank":
+    case "ginghamtank":
+    case "clue_blackwhitetank":
+    case "clue_denimtank":
+    case "old_bluetank":
+    case "old_knittop":
+    case "old_littleblacktank":
+    case "old_littletank":
+      return { backgroundSize: "280%", backgroundPositionY: "40%" };
+    case "kayla":
+    case "peow":
+      return { backgroundSize: "200%", backgroundPositionY: "40%" };
+    // dresses
+    case "kiraku":
+    case "clue_porcelaincatdress":
+      return { backgroundSize: "180%", backgroundPositionY: "45%" };
+    // bottoms
     case "old_tinyshort":
     case "heartshorts":
-      return { backgroundSize: "300%", backgroundPositionY: "65%" };    
+      return { backgroundSize: "300%", backgroundPositionY: "65%" };
+    case "clue_pearledskirt":
+    case "old_denimskirt":
+    case "old_cloudskirt":
+      return { backgroundSize: "200%", backgroundPositionY: "90%" };
     case "old_tennis":
       return { backgroundSize: "250%", backgroundPositionY: "70%" };
+    // accessories - right hand
+    case "chocobear":
+      return { backgroundSize: "500%", backgroundPositionX: "82%", backgroundPositionY: "57%"};
+    case "old_icecream":
+      return { backgroundSize: "500%", backgroundPositionX: "80%", backgroundPositionY: "57%"};
+    case "scrunchieblue":
+    case "scrunchiepink":
+    case "scrunchiewhite":
+      return { backgroundSize: "600%", backgroundPositionX: "75%", backgroundPositionY: "55%"};
+    // accessories - left hand
+    case "scrunchieplaid":
+      return { backgroundSize: "600%", backgroundPositionX: "23%", backgroundPositionY: "55%"};
+    case "clue_creamsoda":
+      return { backgroundSize: "500%", backgroundPositionX: "16%", backgroundPositionY: "55%"};
+    case "old_dinonug":
+      return { backgroundSize: "300%", backgroundPositionX: "10%", backgroundPositionY: "55%"};
+    case "paintbrush": 
+    case "tulips":
+      return { backgroundSize: "300%", backgroundPositionX: "10%", backgroundPositionY: "52%"};
+    case "old_pocky":
+      return { backgroundSize: "300%", backgroundPositionX: "7%", backgroundPositionY: "55%"};
+    // accessories - neck 
+    case "old_scarf": 
+      return { backgroundSize: "120%", backgroundPositionY: "38%" };
+    case "old_ribbons":
+      return { backgroundSize: "200%", backgroundPositionY: "-20%" };
+    case "chazubead": 
+    case "old_chain":
+    case "old_dirtnecklace":
+    case "old_chazudonut":
+    case "clue_jadestar":
+      return { backgroundSize: "550%", backgroundPositionY: "34%" };
+    case "jadeegg":
+        return { backgroundSize: "550%", backgroundPositionY: "37%" };
+    case "old_airbods":
+      return { backgroundSize: "450%", backgroundPositionY: "32%" };
+    // accessories - face
+    case "glasses": 
+      return { backgroundSize: "350%", backgroundPositionY: "11%" };
+    case "partyhat": 
+      return { backgroundSize: "350%", backgroundPositionY: "-8%", backgroundPositionX: "45%" };
+    case "sardine": 
+      return { backgroundSize: "600%", backgroundPositionY: "12%", backgroundPositionX: "41%" };
+    case "old_eggbarrette":
+      return { backgroundSize: "600%", backgroundPositionY: "6%", backgroundPositionX: "60%" };
+    // accessories - bags
+    case "old_starbag": 
+    case "workbag":
+      return { backgroundSize: "200%", backgroundPositionX: "65%", backgroundPositionY: "50%"};
+    case "clue_bluecrossbody":
+      return { backgroundSize: "160%", backgroundPositionX: "35%", backgroundPositionY: "50%"};
+    case "old_greenbag":
+    case "old_emptybag":
+      return { backgroundSize: "200%", backgroundPositionX: "35%", backgroundPositionY: "50%"};
+  
+  
     default:
       return getImageSlotStyle(option.slot);
   }
