@@ -87,7 +87,7 @@
   .option-button {
     width: 100%;
     aspect-ratio: 1;
-    background-color: aliceblue;
+    background-color: white;
     background-repeat: no-repeat;
     background-position-x: center;
     border-radius: 5%;
