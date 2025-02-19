@@ -126,12 +126,12 @@ export const ACCESSORY_OPTIONS: Option[] = [
     puzzle: {
       id: "jadestarPuzzle",
       prompt:
-        "a fruit computer offering: / a siren song that you could sing",
+        "he's asking us, 'well, what's the use?' / his site is one you should peruse / his work, it hides a mystery / and when you highlight, you will see",
       password: "fortune",
       hint: "wealth",
       location: {
-        locationText: "fruit computer, special offering",
-        locationUrl: "https://www.fruits.computer/",
+        locationText: "eric's site, hidden line under creative work",
+        locationUrl: "https://www.ericrawn.media/work",
       },
     },
   },

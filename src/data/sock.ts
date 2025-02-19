@@ -51,7 +51,7 @@ export const SOCK_OPTIONS: Option[] = [
     puzzle: {
       id: "redsockPuzzle",
       prompt:
-        "a bid alum with brush in hand / they painted where they lived: 'i am'",
+        "a BiD alum with colored hair / they lived in berkeley, painted there / a quote to breathe, to listen close / hold still and hover with your mouse",
       password: "tanghulu",
       hint: "sticky sweet",
       location: {
