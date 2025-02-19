@@ -55,7 +55,7 @@ export const BOTTOM_OPTIONS: Option[] = [
     puzzle: {
       id: "pearledPuzzle",
       prompt:
-        "how much i love you? oh, this much / eleventh line of twenty one",
+        "how much i love you? oh, this much / eleventh line of twenty one (5)",
       password: "pearl",
       hint: "your name",
       location: {

@@ -130,7 +130,7 @@ export const TOP_OPTIONS: Option[] = [
       hint: "hug",
       location: {
         locationText: "buddychive, maximum-carousel autumn",
-        locationUrl: "https://open.spotify.com/playlist/0tY6CARSOnte9He43kdIQr",
+        locationUrl: "https://www.instagram.com/p/DCceqdgTZoo/?img_index=1",
       },
     },
   },

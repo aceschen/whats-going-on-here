@@ -113,8 +113,8 @@ export const ACCESSORY_OPTIONS: Option[] = [
       password: "matching",
       hint: "double",
       location: {
-        locationText: "fruit computer",
-        locationUrl: "https://www.fruits.computer/",
+        locationText: "fruit computer, secret potion",
+        locationUrl: "https://www.fruits.computer",
       },
     },
   },
@@ -126,12 +126,12 @@ export const ACCESSORY_OPTIONS: Option[] = [
     puzzle: {
       id: "jadestarPuzzle",
       prompt:
-        "he's asking us, 'well, what's the use?' / his site is one you should peruse",
+        "a fruit computer offering: / a siren song that you could sing",
       password: "fortune",
       hint: "wealth",
       location: {
-        locationText: "eric's site",
-        locationUrl: "https://www.ericrawn.media/",
+        locationText: "fruit computer, special offering",
+        locationUrl: "https://www.fruits.computer/",
       },
     },
   },

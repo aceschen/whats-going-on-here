@@ -45,11 +45,11 @@
     </div>
     <div class="homepage-text">
       <p><span style="color:var(--red-accent)">congratalions!</span> you solved all nineteen puzzles and unlocked all the items! 
-      enjoy isabuilding :3C</p>
+      enjoy isabuilding :3C all my love, <span style="color:var(--red-accent)">ace</span></p>
       <p>~*~ <span style="color:var(--red-accent)">credits</span> ~*~</p>
       <p>programming: kevin </p>
       <p>clue testing: serena & jack</p>
-      <p>clue hiding: henry, shm, jingyi, eric, kiki, serena, & david</p>
+      <p>clue hiding: henry, shm, jingyi, kiki, serena, & david</p>
       <p>~*~*~*~*~*~*~</p>
       <p>your final password: <span style="color:var(--red-accent)">loveisintheair!</span></p>
     </div>

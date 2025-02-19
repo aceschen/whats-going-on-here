@@ -98,7 +98,7 @@
       <input
         class="answer-input"
         bind:value={enteredPassword}
-        placeholder="puzzle answer"
+        placeholder="cryptic crossword clue answer"
         on:keydown={onPasswordKeydown}
       />
       <button class="submit-button" on:click={onPasswordClick}>
@@ -131,6 +131,7 @@
     margin-bottom: 1rem;
     border-radius: 4px;
     border: solid var(--red-accent);
+    width: 60%;
   }
 
   .answer-input:focus {
